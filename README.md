@@ -1,2 +1,0 @@
-# Teaching
- everything about teaching
