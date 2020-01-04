@@ -2,7 +2,7 @@
   @Author: Xinyu Ou
   @Date:   2019-12-04 11:04:20
   @Last Modified by:   Your name
-  @Last Modified time: 2019-12-04 23:27:16
+  @Last Modified time: 2020-01-04 22:13:38
 -->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -29,7 +29,8 @@
         a:hover {text-decoration: none; color: #5D5D5D;}
 
         #Notice {  margin: 20px 0;width: 100%; background-color: seashell;}
-        #NoticeContent {width: 1280px; margin: 0 auto;}
+        #Documents {  margin: 20px 0;width: 100%;}
+        #NoticeContent, #DocumentsContent {width: 1280px; margin: 0 auto;}
         #Syllabus {width: 1280px;margin: 0 auto;}
         #Syllabus table {width: 100%;}
         #Syllabus td {margin: 10px;border-bottom: silver 1px solid;vertical-align: top;padding:10px;}
@@ -53,6 +54,15 @@
         </div>
     </div>
 
+    <div id="Documents">
+        <div id="DocumentsContent">
+            教学文件：
+            <a href="Documents/《机器学习（71094322）》教学大纲.pdf" target="_blank">教学大纲</a> 
+            <a href="Documents/《机器学习（71094322）》考核说明.pdf" target="_blank">考核说明</a> 
+            <a href="Documents/《机器学习（71094322）》教学进度计划.pdf" target="_blank">教学进度计划(2020年春)</a>
+        </div>
+    </div>
+
     <div id="Syllabus">
         <table>
             <tr class="SyllabusTitle">
@@ -72,7 +82,7 @@
                 <td><ul><li>Week1 Section2</li></ul></td>
                 <td>
                     <ul>
-                        <li>第02章 安装和配置 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch02-Installations.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第02章 安装和配置 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch02-Installations.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. Python环境的安装和配置</li>
                         <li>2. Numpy基础科学计算库 </li>
                         <li>3. Scipy科学计算工具集 </li>
@@ -81,14 +91,14 @@
                         <li>6. scikit-learn机器学习库</li> 
                     </ul>
                 </td>
-                <td><ul><li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch02-Installation-assignment.ipynb" target="_blank">课后作业</a></li></ul></td>
+                <td><ul><li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch02-Installation-assignment.ipynb" target="_blank">课后作业</a></li></ul></td>
             </tr>
             <tr>
                 <td><ul><li>Lecture 2</li></ul></td>
                 <td><ul><li>Week1 Section2</li></ul></td>
                 <td>
                     <ul>
-                        <li>第03章 KNN (K最近邻算法/K近邻算法) <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch03-KNN.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第03章 KNN (K最近邻算法/K近邻算法) <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch04-LinearModels.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -99,18 +109,18 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch03-KNN-assignment.ipynb" target="_blank">课后作业</a></li>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/functions/sklearn.datasets.make_regression.ipynb" target="_blank"> sklearn.dataset.make_regression</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch04-LinearModels-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/functions/sklearn.datasets.make_regression.ipynb" target="_blank">[Function] sklearn.dataset.make_regression</a></li>
                     </ul>
                 </td>
             </tr>
             <tr class="SyllabusDiscussion">
-                <td><ul><li>Discussion Section</li></ul></td>
+                <td><ul><li>Discussion Section 1</li></ul></td>
                 <td><ul><li>Week1 Section2</li></ul></td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/knowledgement/python_numpy.ipynb" target="_blank">Numpy计算库</a></li>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/knowledgement/train_val_test.ipynb" target="_blank">训练集、验证机和测试集</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/knowledgement/python_numpy.ipynb" target="_blank">Numpy计算库</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/knowledgement/train_val_test.ipynb" target="_blank">训练集、验证机和测试集</a></li>
                     </ul>
                 </td>
                 <td></td>
@@ -120,7 +130,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第04章 广义线性模型 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch04-LinearModels.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第04章 广义线性模型 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch04-LinearModels.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -131,7 +141,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch04-LinearModels-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Notebooks/Ch04-LinearModels-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -140,7 +150,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第05章 朴素贝叶斯 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch05-NaiveBayes.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第05章 朴素贝叶斯 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch05-NaiveBayes.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -151,7 +161,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch05-NaiveBayes-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch05-NaiveBayes-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -160,7 +170,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第06章 决策树和随机森林 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch06-DecisionTree.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第06章 决策树和随机森林 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch06-DecisionTree.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -171,7 +181,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch06-DecisionTree-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch06-DecisionTree-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -180,7 +190,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第07章 支持向量机（SVM） <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch07-SVM.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第07章 支持向量机（SVM） <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch07-SVM.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -191,16 +201,27 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch07-SVM-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch07-SVM-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
+            </tr>
+            
+            <tr class="SyllabusDiscussion">
+                <td><ul><li>Discussion Section 2</li></ul></td>
+                <td><ul><li>Week1 Section2</li></ul></td>
+                <td>
+                    <ul>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/knowledgement/overfitting_underfitting.ipynb" target="_blank">过拟合与欠拟合</a></li>
+                    </ul>
+                </td>
+                <td></td>
             </tr>
             <tr>
                 <td><ul><li>Lecture 7</li></ul></td>
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第08章 神经网络 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch08-NeuralNetworks.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第08章 神经网络 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch08-NeuralNetworks.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -211,7 +232,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch08-NeuralNetworks-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch08-NeuralNetworks-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -220,7 +241,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第09章 数据预处理、降维、特征提取及聚类 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch09-Preprocessing.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第09章 数据预处理、降维、特征提取及聚类 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch09-Preprocessing.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -231,7 +252,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch09-Preprocessing-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch09-Preprocessing-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -240,7 +261,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第10章 数据表达与特征工程 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch10-DataRepresentation.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第10章 数据表达与特征工程 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch10-DataRepresentation.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -251,7 +272,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch10-DataRepresentation-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch10-DataRepresentation-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -260,7 +281,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第11章 模型评估与优化 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch11-Optimiztion.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第11章 模型评估与优化 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch11-Optimiztion.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -271,7 +292,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch05-NaiveBayes-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/NotebooksCh11-Optimiztion-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -280,7 +301,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第12章 建立算法的管道模型 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch12-Pipe.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第12章 建立算法的管道模型 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch12-Pipe.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -291,7 +312,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch12-Pipe-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch12-Pipe-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -300,7 +321,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第13章 文本数据处理 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch13-TextProcessing.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第13章 文本数据处理 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch13-TextProcessing.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -311,7 +332,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch13-TextProcessing-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch13-TextProcessing-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -320,7 +341,7 @@
                 <td><ul><li></li></ul></td>
                 <td>
                     <ul>
-                        <li>第14章 从数据获取到话题提取 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch14-DataCapture.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第14章 从数据获取到话题提取 <a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch14-DataCapture.ipynb" target="_blank">[Notebook]</a></li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -331,7 +352,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Ch14-DataCapture-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="https://nbviewer.jupyter.org/github/ouxinyu/Teaching/blob/master/MachineLearning/Notebooks/Ch14-DataCapture-assignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
