@@ -7,7 +7,9 @@ import os
 # Codes
 # rootPath = os.path.join(os.getcwd(), 'Datasets', 'mnist')
 # Notebook
-rootPath = os.path.join(os.getcwd(), '..', 'Datasets', 'mnist')
+rootPath = os.path.join(os.getcwd(), '..', '..', 'Datasets', 'mnist')
+
+print(rootPath)
 
 print('开始载入MNIST手写数字数据集：')
 
