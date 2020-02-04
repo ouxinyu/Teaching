@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <!-- 
   @Author: Xinyu Ou
   @Date:   2019-12-04 11:04:20
   @Last Modified by:   Your name
   @Last Modified time: 2020-01-04 22:16:52
 -->
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -65,7 +65,7 @@
         }
         
         #NoticeContent,
-        #DocumentsContent {
+        .DocumentsContent {
             width: 1280px;
             margin: 0 auto;
         }
@@ -117,11 +117,15 @@
     </div>
 
     <div id="Documents">
-        <div id="DocumentsContent">
+        <div class="DocumentsContent">
             教学文件：
             <a href="Documents/《机器学习（71094322）》教学大纲.pdf" target="_blank">教学大纲</a>
             <a href="Documents/《机器学习（71094322）》考核说明.pdf" target="_blank">考核说明</a>
             <a href="Documents/《机器学习（71094322）》教学进度计划.pdf" target="_blank">教学进度计划(2020年春)</a>
+        </div>
+        <div class="DocumentsContent">
+            Github：
+            <a href="https://github.com/ouxinyu/Teaching/tree/master/MachineLearning" target="_blank">MachineLearning</a>
         </div>
     </div>
 
@@ -250,12 +254,11 @@
                             <a href="PPT/Ch04LinearModels.pptx" target="_blank">[PPT]</a>
                             <a href="PDF/Ch04LinearModels.pdf" target="_blank">[PDF]</a>
                         </li>
-                        <li>
-                            <li>1. 线性模型的基本概念</li>
-                            <li>2. 线性模型的可视化</li>
-                            <li>3. 线性回归（Linear Regression）</li>
-                            <li>4. 岭回归（Ridge Regression）</li>
-                            <li>5. 套索回归（Lasso Regression）</li>
+                        <li>1. 线性模型的基本概念</li>
+                        <li>2. 线性模型的可视化</li>
+                        <li>3. 线性回归（Linear Regression）</li>
+                        <li>4. 岭回归（Ridge Regression）</li>
+                        <li>5. 套索回归（Lasso Regression）</li>
                     </ul>
                 </td>
                 <td>
@@ -282,12 +285,12 @@
                             <a href="PPT/Ch05NaiveBayes.pptx" target="_blank">[PPT]</a>
                             <a href="PDF/Ch05NaiveBayes.pdf" target="_blank">[PDF]</a>
                         </li>
-                        <li>1. KNN算法原理</li>
-                        <li>2. 基于KNN的二分类任务</li>
-                        <li>3. 基于KNN的多分类任务</li>
-                        <li>4. 基于KNN的回归分析</li>
-                        <li>5. KNN算法案例一：酒的分类</li>
-                        <li>6. KNN算法案例二：糖尿病预测</li>
+                        <li>1. 朴素贝叶斯的基本概念</li>
+                        <li>2. 朴素贝叶斯的简单应用实例</li>
+                        <li>3. 贝努利朴素贝叶斯</li>
+                        <li>4. 高斯朴素贝叶斯</li>
+                        <li>5. 多项式朴素贝叶斯</li>
+                        <li>6. 贝叶斯综合实例——肿瘤判断</li>
                     </ul>
                 </td>
                 <td>
@@ -314,17 +317,16 @@
                             <a href="PPT/Ch06DecisionTree.pptx" target="_blank">[PPT]</a>
                             <a href="PDF/Ch06DecisionTree.pdf" target="_blank">[PDF]</a>
                         </li>
-                        <li>1. KNN算法原理</li>
-                        <li>2. 基于KNN的二分类任务</li>
-                        <li>3. 基于KNN的多分类任务</li>
-                        <li>4. 基于KNN的回归分析</li>
-                        <li>5. KNN算法案例一：酒的分类</li>
-                        <li>6. KNN算法案例二：糖尿病预测</li>
+                        <li>1. 决策树算法的基本原理</li>
+                        <li>2. 决策树的构建、分析与评估</li>
+                        <li>3. 随机森林的基本原理</li>
+                        <li>4. 随机森林的构建、分析与评估</li>
+                        <li>5. 决策树与随机森林综合实力——基于Adult的相亲问题</li>
                     </ul>
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch06-DecisionTree-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch06DecisionTreeAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -341,7 +343,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第07章 支持向量机（SVM） <a href="Notebooks/Ch07-SVM.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第07章 支持向量机
+                            <a href="Notebooks/Ch07SVM.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch07SVM.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch07SVM.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -352,7 +358,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch07-SVM-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch07SVMAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -388,7 +394,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第08章 神经网络 <a href="Notebooks/Ch08-NeuralNetworks.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第08章 神经网络
+                            <a href="Notebooks/Ch08NeuralNetworks.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch08NeuralNetworks.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch08NeuralNetworks.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -399,7 +409,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch08-NeuralNetworks-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch08NeuralNetworksAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -416,7 +426,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第09章 数据预处理、降维、特征提取及聚类 <a href="Notebooks/Ch09-Preprocessing.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第09章 数据预处理、降维、特征提取及聚类
+                            <a href="Notebooks/Ch09Preprocessing.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch09Preprocessing.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch09Preprocessing.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -427,7 +441,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch09-Preprocessing-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch09PreprocessingAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -444,7 +458,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第10章 数据表达与特征工程 <a href="Notebooks/Ch10-DataRepresentation.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第10章 数据表达与特征工程
+                            <a href="Notebooks/Ch10DataRepresentation.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch10DataRepresentation.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch10DataRepresentation.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -455,7 +473,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch10-DataRepresentation-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch10DataRepresentationAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -472,7 +490,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第11章 模型评估与优化 <a href="Notebooks/Ch11-Optimiztion.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第11章 模型评估与优化
+                            <a href="Notebooks/Ch11Optimiztion.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch11Optimiztion.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch11Optimiztion.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -483,7 +505,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="NotebooksCh11-Optimiztion-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch11OptimiztionAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -500,7 +522,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第12章 建立算法的管道模型 <a href="Notebooks/Ch12-Pipe.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第12章 建立算法的管道模型
+                            <a href="Notebooks/Ch12Pipe.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch12Pipe.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch12Pipe.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -511,7 +537,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch12-Pipe-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch12PipeAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -528,7 +554,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第13章 文本数据处理 <a href="Notebooks/Ch13-TextProcessing.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第13章 文本数据处理
+                            <a href="Notebooks/Ch13TextProcessing.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch13TextProcessing.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch13TextProcessing.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -539,7 +569,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch13-TextProcessing-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch13TextProcessingAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
@@ -556,7 +586,11 @@
                 </td>
                 <td>
                     <ul>
-                        <li>第14章 从数据获取到话题提取 <a href="Notebooks/Ch14-DataCapture.ipynb" target="_blank">[Notebook]</a></li>
+                        <li>第14章 从数据获取到话题提取
+                            <a href="Notebooks/Ch14DataCapture.ipynb" target="_blank">[Notebook]</a>
+                            <a href="PPT/Ch14DataCapture.pptx" target="_blank">[PPT]</a>
+                            <a href="PDF/Ch14DataCapture.pdf" target="_blank">[PDF]</a>
+                        </li>
                         <li>1. KNN算法原理</li>
                         <li>2. 基于KNN的二分类任务</li>
                         <li>3. 基于KNN的多分类任务</li>
@@ -567,7 +601,7 @@
                 </td>
                 <td>
                     <ul>
-                        <li><a href="Notebooks/Ch14-DataCapture-assignment.ipynb" target="_blank">课后作业</a></li>
+                        <li><a href="Notebooks/Ch14DataCaptureAssignment.ipynb" target="_blank">课后作业</a></li>
                     </ul>
                 </td>
             </tr>
