@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lecture02VectorAnswers</title>
+<title>reshape</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;<a class="anchor-link" href="#&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#182;</a></h1>
+<h2 id="reshape(-1,-1)">reshape(-1, 1)<a class="anchor-link" href="#reshape(-1,-1)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13086,74 +13086,31 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font color="blue">作者：欧新宇（Xinyu OU）</font></p>
 <p><font color="red">本文档所展示的测试结果，均运行于：Intel Core i7-7700K CPU 4.2GHz</font></p>
+<p>最后修订: 2020-01-29</p>
 <hr>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>要求完成以下作业:</strong></p>
-<ol>
-<li><p>设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $v_1-v_2$ 及 $3v_1 + 2v_2 - v_3$。</p>
-</li>
-<li><p>设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-</li>
-<li><p>$u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-</li>
-</ol>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【作业提交】</strong></p>
 <ul>
-<li><p>有电脑的同学</p>
-<ul>
-<li>将所有运行结果保存至word文档（最好能另存为pdf）</li>
-<li>要求：使用编程环境完成下列习题，并按题目顺序将代码（代码通过截图粘贴）和运行结果贴于文档中</li>
-<li>将文档上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-<li><p>没有电脑的同学</p>
-<ul>
-<li>在作业本上完成以上习题，并进行拍照</li>
-<li>按顺序将<strong>照片</strong>上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-</ul>
-<blockquote><p>有电脑的尽量使用电脑完成作业！！！</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【参考答案】</strong></p>
-<p><strong>1. 第一题：</strong> 设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $a = v_1-v_2$ 及 $b = 3v_1 + 2v_2 - v_3$。</p>
-<ul>
-<li>手工推导</li>
-</ul>
-<p>解：</p>
-<p>$a = v_1-v_2 =
-\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
--\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} 1-0 \\ 1-1 \\ 0-1 \end{bmatrix}
-=\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$</p>
-<p>$b = 3v_1 + 2v_2 - v_3=
-3*\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
-+2*\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
--\begin{bmatrix} 3 \\ 4 \\ 0 \end{bmatrix}
-=\begin{bmatrix} 3*1+2*0-3 \\ 3*1+2*1-4 \\ 3*0+2*1-0 \end{bmatrix}
-=\begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}$</p>
-<ul>
-<li>Python描述：</li>
+<li>显示矩阵 a</li>
 </ul>
 
 </div>
@@ -13161,17 +13118,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">v1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">v1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="o">-</span><span class="n">v3</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13188,12 +13138,11 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a = [[ 1]
- [ 0]
- [-1]]
-b = [[0]
- [1]
- [2]]
+<pre>[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]
+ [17 18 19 20]]
 </pre>
 </div>
 </div>
@@ -13205,23 +13154,8 @@ b = [[0]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2. 第二题：</strong> 设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-<p>解：</p>
-<p>$3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$</p>
-<p>=&gt; $3a_1 - 3*a + 2a_2 + 3*a = 5a_3 + 5*a$</p>
-<p>=&gt; $3a_1 + 2a_2 - 5a_3 = 6*a$</p>
-<p>=&gt; $a = \frac{3}{6} a_1 + \frac{2}{6} a_2 - \frac{5}{6} a_3$</p>
 <ul>
-<li>手工推导</li>
-</ul>
-<p>$a =
-\frac{3}{6}*\begin{bmatrix} 2 \\ 5 \\ 1 \\ 3 \end{bmatrix}
-+\frac{2}{6}*\begin{bmatrix} 10 \\ 1 \\ 5 \\ 10 \end{bmatrix}
--\frac{5}{6}\begin{bmatrix} 4 \\ 1 \\ -1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} \frac{6+20-20}{6} \\ \frac{15+2-10}{6} \\ \frac{3+10+5}{6} \\ \frac{9+20-5}{6} \end{bmatrix}
-=\begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}$</p>
-<ul>
-<li>Python描述</li>
+<li>将矩阵转换为 “<strong>一行，n列</strong>”，并显示</li>
 </ul>
 
 </div>
@@ -13229,15 +13163,10 @@ b = [[0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13254,10 +13183,7 @@ b = [[0]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[1.]
- [2.]
- [3.]
- [4.]]
+<pre>[[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]]
 </pre>
 </div>
 </div>
@@ -13269,49 +13195,19 @@ b = [[0]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<ol>
-<li>乘法的符号，注意区分： <em> , .dot , .cross, .</em>。</li>
-<li>"1."？ 1是一个浮点数，表示带小数。此时小数部分=0，因为1.0 = 1，所以省略了小数部分，变成 “1.”。值得注意的是Python是一种弱变量语法，它不需要显示定义数据类型，因此数据类型之间根据需要可以在一定范围内自动进行转换。例如在产生分数的时候，整型就自动转换为了浮点型。本题中，由于后面的乘法运算，将分数部分约分了，所以就以浮点型的形式显示整数，如：1.，2.，3.。</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>3. 第三题：</strong> $u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-<p>解：</p>
-<p>$u·u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-· \begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= 3*5 + 2*3 + 2*1
-= 15 + 6 + 2
-= 23$</p>
-<p>$u \times u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-\times
-\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= \begin{bmatrix} u_2v_3-u_3v_2 \\ u_3v_1-u_1v_3 \\ u_1v_2-u_2v_1 \end{bmatrix}
-= \begin{bmatrix}  2*1-2*3 \\ 2*5-3*1 \\ 3*3-2*5 \end{bmatrix}
-= \begin{bmatrix} -4 \\ 7 \\ -1 \end{bmatrix}$</p>
+<ul>
+<li>将矩阵转换为 “<strong>n行，一列</strong>”，并显示</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-
-<span class="n">dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>  <span class="c1"># 不是数学规则，而是程序的限制，大家只需要记住</span>
-<span class="n">cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;点乘：</span><span class="si">{}</span><span class="s1">，叉乘：</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span> <span class="n">cross</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13328,7 +13224,163 @@ b = [[0]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>点乘：[[23]]，叉乘：[[-4  7 -1]]
+<pre>[[ 1]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]
+ [10]
+ [11]
+ [12]
+ [13]
+ [14]
+ [15]
+ [16]
+ [17]
+ [18]
+ [19]
+ [20]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>将矩阵转换为“<strong>两行，n列</strong>”，并显示</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1  2  3  4  5  6  7  8  9 10]
+ [11 12 13 14 15 16 17 18 19 20]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>将矩阵转换为“<strong>n行，二列</strong>”，并显示</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1  2]
+ [ 3  4]
+ [ 5  6]
+ [ 7  8]
+ [ 9 10]
+ [11 12]
+ [13 14]
+ [15 16]
+ [17 18]
+ [19 20]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>将矩阵转换为“<strong>5行，n列</strong>”，并显示</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]
+ [17 18 19 20]]
 </pre>
 </div>
 </div>

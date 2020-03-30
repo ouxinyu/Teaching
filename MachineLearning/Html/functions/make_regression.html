@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lecture02VectorAnswers</title>
+<title>make_regression</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;<a class="anchor-link" href="#&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#182;</a></h1>
+<h2 id="&#20989;&#25968;&#35828;&#26126;&#65306;-sklearn.datasets.make_regression">&#20989;&#25968;&#35828;&#26126;&#65306; sklearn.datasets.make_regression<a class="anchor-link" href="#&#20989;&#25968;&#35828;&#26126;&#65306;-sklearn.datasets.make_regression">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13086,6 +13086,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font color="blue">作者：欧新宇（Xinyu OU）</font></p>
 <p><font color="red">本文档所展示的测试结果，均运行于：Intel Core i7-7700K CPU 4.2GHz</font></p>
+<p>最后修订: 2020-01-29</p>
 <hr>
 
 </div>
@@ -13094,15 +13095,26 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>要求完成以下作业:</strong></p>
-<ol>
-<li><p>设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $v_1-v_2$ 及 $3v_1 + 2v_2 - v_3$。</p>
-</li>
-<li><p>设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-</li>
-<li><p>$u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-</li>
-</ol>
+<h2 id="--&#20989;&#25968;&#32454;&#33410;">- &#20989;&#25968;&#32454;&#33410;<a class="anchor-link" href="#--&#20989;&#25968;&#32454;&#33410;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">sklearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_regression</span><span class="p">(</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+    <span class="n">n_features</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+    <span class="n">n_informative</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+    <span class="n">n_targets</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">bias</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+    <span class="n">effective_rank</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">tail_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+    <span class="n">noise</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+    <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+    <span class="n">coef</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> 
+    <span class="n">random_state</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -13110,24 +13122,50 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【作业提交】</strong></p>
-<ul>
-<li><p>有电脑的同学</p>
-<ul>
-<li>将所有运行结果保存至word文档（最好能另存为pdf）</li>
-<li>要求：使用编程环境完成下列习题，并按题目顺序将代码（代码通过截图粘贴）和运行结果贴于文档中</li>
-<li>将文档上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-<li><p>没有电脑的同学</p>
-<ul>
-<li>在作业本上完成以上习题，并进行拍照</li>
-<li>按顺序将<strong>照片</strong>上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-</ul>
-<blockquote><p>有电脑的尽量使用电脑完成作业！！！</p>
-</blockquote>
+<h2 id="--&#21442;&#25968;&#35299;&#37322;">- &#21442;&#25968;&#35299;&#37322;<a class="anchor-link" href="#--&#21442;&#25968;&#35299;&#37322;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">n_samples</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="err">样本数</span> 
+
+<span class="n">n_features</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="err">特征数</span>
+
+<span class="n">n_informative</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">informative</span> <span class="n">features</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">,</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">features</span> <span class="n">used</span> <span class="n">to</span> <span class="n">build</span> <span class="n">the</span> <span class="n">linear</span> <span class="n">model</span> <span class="n">used</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">the</span> <span class="n">output</span><span class="o">.</span><span class="err">（有信息的特征数量，也就是用来构造线性模型，生成输出的特征数量）</span>
+
+<span class="n">n_targets</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">regression</span> <span class="n">targets</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">,</span> <span class="n">the</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">the</span> <span class="n">y</span> <span class="n">output</span> <span class="n">vector</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">a</span> <span class="n">sample</span><span class="o">.</span> <span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">scalar</span><span class="o">.</span><span class="err">（回归目标的数量，也就是对应于一个样本输出向量</span><span class="n">y的维度</span><span class="err">。默认输出是标量）</span>
+
+<span class="n">bias</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">bias</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">underlying</span> <span class="n">linear</span> <span class="n">model</span><span class="o">.</span> 
+
+<span class="n">effective_rank</span> <span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="bp">None</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="n">The</span> <span class="n">approximate</span> <span class="n">number</span> <span class="n">of</span> <span class="n">singular</span> <span class="n">vectors</span> <span class="n">required</span> <span class="n">to</span> <span class="n">explain</span> <span class="n">most</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">data</span> <span class="n">by</span> <span class="n">linear</span> <span class="n">combinations</span><span class="o">.</span> <span class="n">Using</span> <span class="n">this</span> <span class="n">kind</span> <span class="n">of</span> <span class="n">singular</span> <span class="n">spectrum</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">generator</span> <span class="n">to</span> <span class="n">reproduce</span> <span class="n">the</span> <span class="n">correlations</span> <span class="n">often</span> <span class="n">observed</span> <span class="ow">in</span> <span class="n">practice</span><span class="o">.</span>
+<span class="k">if</span> <span class="bp">None</span><span class="p">:</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="nb">set</span> <span class="ow">is</span> <span class="n">well</span> <span class="n">conditioned</span><span class="p">,</span> <span class="n">centered</span> <span class="ow">and</span> <span class="n">gaussian</span> <span class="k">with</span> <span class="n">unit</span> <span class="n">variance</span><span class="o">.</span>
+
+<span class="n">tail_strength</span> <span class="p">:</span> <span class="nb">float</span> <span class="n">between</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">relative</span> <span class="n">importance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">fat</span> <span class="n">noisy</span> <span class="n">tail</span> <span class="n">of</span> <span class="n">the</span> <span class="n">singular</span> <span class="n">values</span> <span class="n">profile</span> <span class="k">if</span> <span class="n">effective_rank</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="o">.</span>
+
+<span class="n">noise</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">gaussian</span> <span class="n">noise</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">output</span><span class="o">.</span>
+
+<span class="n">shuffle</span> <span class="p">:</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">Shuffle</span> <span class="n">the</span> <span class="n">samples</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">features</span><span class="o">.</span>
+
+<span class="n">coef</span> <span class="p">:</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">optional</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">If</span> <span class="bp">True</span><span class="p">,</span> <span class="n">the</span> <span class="n">coefficients</span> <span class="n">of</span> <span class="n">the</span> <span class="n">underlying</span> <span class="n">linear</span> <span class="n">model</span> <span class="n">are</span> <span class="n">returned</span><span class="o">.</span>
+
+<span class="n">random_state</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">RandomState</span> <span class="n">instance</span> <span class="ow">or</span> <span class="bp">None</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
+<span class="n">Determines</span> <span class="n">random</span> <span class="n">number</span> <span class="n">generation</span> <span class="k">for</span> <span class="n">dataset</span> <span class="n">creation</span><span class="o">.</span> <span class="n">Pass</span> <span class="n">an</span> <span class="nb">int</span> <span class="k">for</span> <span class="n">reproducible</span> <span class="n">output</span> <span class="n">across</span> <span class="n">multiple</span> <span class="n">function</span> <span class="n">calls</span><span class="o">.</span> <span class="n">See</span> <span class="n">Glossary</span><span class="o">.</span>
+</pre></div>
 
 </div>
 </div>
@@ -13135,204 +13173,35 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【参考答案】</strong></p>
-<p><strong>1. 第一题：</strong> 设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $a = v_1-v_2$ 及 $b = 3v_1 + 2v_2 - v_3$。</p>
-<ul>
-<li>手工推导</li>
-</ul>
-<p>解：</p>
-<p>$a = v_1-v_2 =
-\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
--\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} 1-0 \\ 1-1 \\ 0-1 \end{bmatrix}
-=\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$</p>
-<p>$b = 3v_1 + 2v_2 - v_3=
-3*\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
-+2*\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
--\begin{bmatrix} 3 \\ 4 \\ 0 \end{bmatrix}
-=\begin{bmatrix} 3*1+2*0-3 \\ 3*1+2*1-4 \\ 3*0+2*1-0 \end{bmatrix}
-=\begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}$</p>
-<ul>
-<li>Python描述：</li>
-</ul>
+<h2 id="--&#36820;&#22238;&#20540;">- &#36820;&#22238;&#20540;<a class="anchor-link" href="#--&#36820;&#22238;&#20540;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">X</span> <span class="p">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">shape</span> <span class="p">[</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">]</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="n">samples</span><span class="o">.</span>
+
+<span class="n">y</span> <span class="p">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">shape</span> <span class="p">[</span><span class="n">n_samples</span><span class="p">]</span> <span class="ow">or</span> <span class="p">[</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_targets</span><span class="p">]</span>
+<span class="n">The</span> <span class="n">output</span> <span class="n">values</span><span class="o">.</span>
+
+<span class="n">coef</span> <span class="p">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">shape</span> <span class="p">[</span><span class="n">n_features</span><span class="p">]</span> <span class="ow">or</span> <span class="p">[</span><span class="n">n_features</span><span class="p">,</span> <span class="n">n_targets</span><span class="p">],</span> <span class="n">optional</span>
+<span class="n">The</span> <span class="n">coefficient</span> <span class="n">of</span> <span class="n">the</span> <span class="n">underlying</span> <span class="n">linear</span> <span class="n">model</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">returned</span> <span class="n">only</span> <span class="k">if</span> <span class="n">coef</span> <span class="ow">is</span> <span class="bp">True</span><span class="o">.</span>
+</pre></div>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">v1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">v1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="o">-</span><span class="n">v3</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">参数</span> <span class="o">--</span> <span class="n">超参数</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a = [[ 1]
- [ 0]
- [-1]]
-b = [[0]
- [1]
- [2]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2. 第二题：</strong> 设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-<p>解：</p>
-<p>$3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$</p>
-<p>=&gt; $3a_1 - 3*a + 2a_2 + 3*a = 5a_3 + 5*a$</p>
-<p>=&gt; $3a_1 + 2a_2 - 5a_3 = 6*a$</p>
-<p>=&gt; $a = \frac{3}{6} a_1 + \frac{2}{6} a_2 - \frac{5}{6} a_3$</p>
-<ul>
-<li>手工推导</li>
-</ul>
-<p>$a =
-\frac{3}{6}*\begin{bmatrix} 2 \\ 5 \\ 1 \\ 3 \end{bmatrix}
-+\frac{2}{6}*\begin{bmatrix} 10 \\ 1 \\ 5 \\ 10 \end{bmatrix}
--\frac{5}{6}\begin{bmatrix} 4 \\ 1 \\ -1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} \frac{6+20-20}{6} \\ \frac{15+2-10}{6} \\ \frac{3+10+5}{6} \\ \frac{9+20-5}{6} \end{bmatrix}
-=\begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}$</p>
-<ul>
-<li>Python描述</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[1.]
- [2.]
- [3.]
- [4.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<ol>
-<li>乘法的符号，注意区分： <em> , .dot , .cross, .</em>。</li>
-<li>"1."？ 1是一个浮点数，表示带小数。此时小数部分=0，因为1.0 = 1，所以省略了小数部分，变成 “1.”。值得注意的是Python是一种弱变量语法，它不需要显示定义数据类型，因此数据类型之间根据需要可以在一定范围内自动进行转换。例如在产生分数的时候，整型就自动转换为了浮点型。本题中，由于后面的乘法运算，将分数部分约分了，所以就以浮点型的形式显示整数，如：1.，2.，3.。</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>3. 第三题：</strong> $u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-<p>解：</p>
-<p>$u·u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-· \begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= 3*5 + 2*3 + 2*1
-= 15 + 6 + 2
-= 23$</p>
-<p>$u \times u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-\times
-\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= \begin{bmatrix} u_2v_3-u_3v_2 \\ u_3v_1-u_1v_3 \\ u_1v_2-u_2v_1 \end{bmatrix}
-= \begin{bmatrix}  2*1-2*3 \\ 2*5-3*1 \\ 3*3-2*5 \end{bmatrix}
-= \begin{bmatrix} -4 \\ 7 \\ -1 \end{bmatrix}$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-
-<span class="n">dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>  <span class="c1"># 不是数学规则，而是程序的限制，大家只需要记住</span>
-<span class="n">cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;点乘：</span><span class="si">{}</span><span class="s1">，叉乘：</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span> <span class="n">cross</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>点乘：[[23]]，叉乘：[[-4  7 -1]]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

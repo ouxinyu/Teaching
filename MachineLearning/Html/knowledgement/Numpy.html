@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lecture02VectorAnswers</title>
+<title>Numpy</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;<a class="anchor-link" href="#&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#21521;&#37327;">&#182;</a></h1>
+<h2 id="Numpy&#22522;&#30784;&#31185;&#23398;&#24211;&#26497;&#31616;&#20351;&#29992;&#35828;&#26126;">Numpy&#22522;&#30784;&#31185;&#23398;&#24211;&#26497;&#31616;&#20351;&#29992;&#35828;&#26126;<a class="anchor-link" href="#Numpy&#22522;&#30784;&#31185;&#23398;&#24211;&#26497;&#31616;&#20351;&#29992;&#35828;&#26126;">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13086,7 +13086,6 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font color="blue">作者：欧新宇（Xinyu OU）</font></p>
 <p><font color="red">本文档所展示的测试结果，均运行于：Intel Core i7-7700K CPU 4.2GHz</font></p>
-<hr>
 
 </div>
 </div>
@@ -13094,15 +13093,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>要求完成以下作业:</strong></p>
-<ol>
-<li><p>设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $v_1-v_2$ 及 $3v_1 + 2v_2 - v_3$。</p>
-</li>
-<li><p>设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-</li>
-<li><p>$u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-</li>
-</ol>
+<h3 id="1.-Why-Numpy?">1. Why Numpy?<a class="anchor-link" href="#1.-Why-Numpy?">&#182;</a></h3><ul>
+<li>numpy是"Numerical Python"的简称。</li>
+<li>numpy提供了一个高性能的多维数组对象ndarray(N Dimension Array)，以及大量的库函数和操作，可以帮助程序员轻松地进行数值计算。</li>
+<li>原生python语言执行速度很慢，C执行500次，python差不多只能执行一次，但是python语法比其它编程语言要简单的多得多。因此我们既想要某一个编程语言执行速快，同时还编程简单。最终python通过集成C和C++，最终解决这个问题，也就是说：底层运行的是C和C++的代码，但是上层使用的是python语言去写的。这就是我们为什么都喜欢使用"numpy库"的原因。</li>
+<li>numpy作为很多的用来做数据挖掘，数据分析，人工智能相关的技术组件的底层实现。像SciPy、Matplotlib、Scikit-learn在一定程度上，都需要依赖numpy。</li>
+</ul>
+<h3 id="2.-Numpy&#30340;&#22871;&#36335;">2. Numpy&#30340;&#22871;&#36335;<a class="anchor-link" href="#2.-Numpy&#30340;&#22871;&#36335;">&#182;</a></h3><p><strong>Numpy</strong>的核心是什么？=====&gt; ndarry数组，也就是说numpy最重要的数据结构就是称为ndarray的n-dim数组，它由两个部分构成：
+1). 元数组部分：存储着当前ndarray对象的描述信息；
+2). 数据部分：存储着当前ndarry对象的真实数据。</p>
 
 </div>
 </div>
@@ -13110,24 +13109,326 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【作业提交】</strong></p>
-<ul>
-<li><p>有电脑的同学</p>
-<ul>
-<li>将所有运行结果保存至word文档（最好能另存为pdf）</li>
-<li>要求：使用编程环境完成下列习题，并按题目顺序将代码（代码通过截图粘贴）和运行结果贴于文档中</li>
-<li>将文档上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-<li><p>没有电脑的同学</p>
-<ul>
-<li>在作业本上完成以上习题，并进行拍照</li>
-<li>按顺序将<strong>照片</strong>上传至 <code>课堂派</code> 平台，<code>作业——第2讲 向量</code></li>
-</ul>
-</li>
-</ul>
-<blockquote><p>有电脑的尽量使用电脑完成作业！！！</p>
-</blockquote>
+<h3 id="3.-Numpy&#30340;&#22522;&#26412;&#23646;&#24615;">3. Numpy&#30340;&#22522;&#26412;&#23646;&#24615;<a class="anchor-link" href="#3.-Numpy&#30340;&#22522;&#26412;&#23646;&#24615;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#36733;&#20837;numpy">&#36733;&#20837;numpy<a class="anchor-link" href="#&#36733;&#20837;numpy">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#26174;&#31034;&#25968;&#32452;">&#26174;&#31034;&#25968;&#32452;<a class="anchor-link" href="#&#26174;&#31034;&#25968;&#32452;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = </span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[ 1,  2,  3,  4],
+       [ 5,  6,  7,  8],
+       [ 9, 10, 11, 12]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x = 
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#25968;&#32452;&#30340;&#24418;&#29366;">&#25968;&#32452;&#30340;&#24418;&#29366;<a class="anchor-link" href="#&#25968;&#32452;&#30340;&#24418;&#29366;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(3, 4)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#25968;&#32452;&#30340;&#22823;&#23567;">&#25968;&#32452;&#30340;&#22823;&#23567;<a class="anchor-link" href="#&#25968;&#32452;&#30340;&#22823;&#23567;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#25968;&#32452;&#30340;&#31867;&#22411;">&#25968;&#32452;&#30340;&#31867;&#22411;<a class="anchor-link" href="#&#25968;&#32452;&#30340;&#31867;&#22411;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype(&#39;int32&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#25968;&#32452;&#30340;&#32500;&#25968;">&#25968;&#32452;&#30340;&#32500;&#25968;<a class="anchor-link" href="#&#25968;&#32452;&#30340;&#32500;&#25968;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.-ndarray&#25968;&#32452;&#21644;list&#21015;&#34920;&#30340;&#31616;&#21333;&#30340;&#23545;&#27604;">4. ndarray&#25968;&#32452;&#21644;list&#21015;&#34920;&#30340;&#31616;&#21333;&#30340;&#23545;&#27604;<a class="anchor-link" href="#4.-ndarray&#25968;&#32452;&#21644;list&#21015;&#34920;&#30340;&#31616;&#21333;&#30340;&#23545;&#27604;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">))</span>
+<span class="o">%</span><span class="k">timeit</span> [i**2 for i in x]
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>338 ms ± 5.24 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> y**2
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.95 ms ± 55.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到numpy的执行效率要远优于python内置的list。</p>
 
 </div>
 </div>
@@ -13135,43 +13436,238 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【参考答案】</strong></p>
-<p><strong>1. 第一题：</strong> 设 $v_1={(1,1,0)}^T, v_2={(0,1,1)}^T, v_3={(3,4,0)}^T$, 求 $a = v_1-v_2$ 及 $b = 3v_1 + 2v_2 - v_3$。</p>
+<h3 id="5.-&#20851;&#20110;&#32500;&#24230;">5. &#20851;&#20110;&#32500;&#24230;<a class="anchor-link" href="#5.-&#20851;&#20110;&#32500;&#24230;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># 一维数组</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是一个维度为</span><span class="si">{}</span><span class="s2">的一维数组：</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+
+<span class="c1"># 二维数组</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是一个维度为</span><span class="si">{}</span><span class="s2">的二维数组：</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># 三维数组</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]],[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我是一个维度为</span><span class="si">{}</span><span class="s1">的三维数组：</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>我是一个维度为1的一维数组：
+[1 2 3 4 5 6]
+我是一个维度为2的二维数组：
+[[1 2 3]
+ [4 5 6]]
+我是一个维度为3的三维数组：
+[[[1 2 3]
+  [4 5 6]
+  [7 8 9]]
+
+ [[1 2 3]
+  [4 5 6]
+  [7 8 9]]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 分别从一维、二维、三维数组中获取元素值为 &quot;6&quot; 的方法</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我是一维数组的</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我是二维数组的</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我是三维数组的</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>我是一维数组的6
+我是二维数组的6
+我是三维数组的6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="6.-&#21019;&#24314;&#25968;&#32452;&#30340;&#20960;&#31181;&#19981;&#21516;&#26041;&#24335;">6. &#21019;&#24314;&#25968;&#32452;&#30340;&#20960;&#31181;&#19981;&#21516;&#26041;&#24335;<a class="anchor-link" href="#6.-&#21019;&#24314;&#25968;&#32452;&#30340;&#20960;&#31181;&#19981;&#21516;&#26041;&#24335;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#21033;&#29992;array()&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;">&#21033;&#29992;array()&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;<a class="anchor-link" href="#&#21033;&#29992;array()&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([1, 2, 3])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[1, 2, 3],
+       [4, 5, 6]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>结论如下：</p>
 <ul>
-<li>手工推导</li>
-</ul>
-<p>解：</p>
-<p>$a = v_1-v_2 =
-\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
--\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} 1-0 \\ 1-1 \\ 0-1 \end{bmatrix}
-=\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$</p>
-<p>$b = 3v_1 + 2v_2 - v_3=
-3*\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
-+2*\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
--\begin{bmatrix} 3 \\ 4 \\ 0 \end{bmatrix}
-=\begin{bmatrix} 3*1+2*0-3 \\ 3*1+2*1-4 \\ 3*0+2*1-0 \end{bmatrix}
-=\begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}$</p>
-<ul>
-<li>Python描述：</li>
+<li>np.array(参数)函数，参数给了什么样式的数据，就构建什么样式的ndarray数组；你给我一个一维列表，我就构建一个一维数组；你给我一个二维列表，我就构建一个二维数组；</li>
+<li>什么是二维列表？每个元素都是一个一维列表的列表，就是一个二维列表；</li>
+<li>如果我构建了一个二维列表，那么这个二维列表中的每个元素就都是一个一维列表；</li>
+<li>在numpy中，一维数组又叫做"向量"；二维数组又叫做"矩阵"；</li>
 </ul>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#21033;&#29992;&#33539;&#22260;&#20989;&#25968;arange()&#29983;&#25104;&#25968;&#32452;&#65292;&#27492;&#22788;&#23545;&#27604;range()&#20989;&#25968;">&#21033;&#29992;&#33539;&#22260;&#20989;&#25968;arange()&#29983;&#25104;&#25968;&#32452;&#65292;&#27492;&#22788;&#23545;&#27604;range()&#20989;&#25968;<a class="anchor-link" href="#&#21033;&#29992;&#33539;&#22260;&#20989;&#25968;arange()&#29983;&#25104;&#25968;&#32452;&#65292;&#27492;&#22788;&#23545;&#27604;range()&#20989;&#25968;">&#182;</a></h4><p>注意：arange()函数的步长，可以是浮点数，但是range()函数的步长，不能是浮点数</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 正向递增</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1, 3, 5, 7, 9]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">v1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">v3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">v1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="o">-</span><span class="n">v3</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 浮点型正向递增</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13187,15 +13683,120 @@ div#notebook {
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a = [[ 1]
- [ 0]
- [-1]]
-b = [[0]
- [1]
- [2]]
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-e8ab0069a4e6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-red-intense-fg ansi-bold"># 浮点型正向递增</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>list2 <span class="ansi-yellow-intense-fg ansi-bold">=</span> list<span class="ansi-yellow-intense-fg ansi-bold">(</span>range<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">10</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">0.5</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      3</span> display<span class="ansi-yellow-intense-fg ansi-bold">(</span>list2<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: &#39;float&#39; object cannot be interpreted as an integer</pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 反向递减</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">list3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[10, 8, 6, 4, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 正向递增</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
+<span class="c1"># 浮点型正向递增</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="c1"># 反向递减</span>
+<span class="n">array3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([1, 3, 5, 7, 9])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5, 7. ,
+       7.5, 8. , 8.5, 9. , 9.5])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([10,  8,  6,  4,  2])</pre>
+</div>
+
 </div>
 
 </div>
@@ -13205,23 +13806,10 @@ b = [[0]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2. 第二题：</strong> 设 $3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$。其中, $a_1={(2,5,1,3)}^T, a_2={(10,1,5,10)}^T, a_3={(4,1,-1,1)}^T$，求$a$。</p>
-<p>解：</p>
-<p>$3(a_1-a) + 2(a_2 + a) = 5(a_3 + a)$</p>
-<p>=&gt; $3a_1 - 3*a + 2a_2 + 3*a = 5a_3 + 5*a$</p>
-<p>=&gt; $3a_1 + 2a_2 - 5a_3 = 6*a$</p>
-<p>=&gt; $a = \frac{3}{6} a_1 + \frac{2}{6} a_2 - \frac{5}{6} a_3$</p>
-<ul>
-<li>手工推导</li>
-</ul>
-<p>$a =
-\frac{3}{6}*\begin{bmatrix} 2 \\ 5 \\ 1 \\ 3 \end{bmatrix}
-+\frac{2}{6}*\begin{bmatrix} 10 \\ 1 \\ 5 \\ 10 \end{bmatrix}
--\frac{5}{6}\begin{bmatrix} 4 \\ 1 \\ -1 \\ 1 \end{bmatrix}
-=\begin{bmatrix} \frac{6+20-20}{6} \\ \frac{15+2-10}{6} \\ \frac{3+10+5}{6} \\ \frac{9+20-5}{6} \end{bmatrix}
-=\begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}$</p>
-<ul>
-<li>Python描述</li>
+<h4 id="&#29983;&#25104;&#25351;&#23450;&#24120;&#29992;&#20989;&#25968;">&#29983;&#25104;&#25351;&#23450;&#24120;&#29992;&#20989;&#25968;<a class="anchor-link" href="#&#29983;&#25104;&#25351;&#23450;&#24120;&#29992;&#20989;&#25968;">&#182;</a></h4><ul>
+<li>np.zeros((x,y)):生成一个x行y列的，元素都是0的二维数组；</li>
+<li>np.ones((x,y))：生成一个x行y列的，元素都是1的二维数组；</li>
+<li>np.full((x,y),value)：生成一个x行y列的，元素都是value的二维数组，其中这个value值可以是整数(正整数,0,负整数)或者小数；</li>
 </ul>
 
 </div>
@@ -13229,15 +13817,17 @@ b = [[0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">a3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13253,13 +13843,42 @@ b = [[0]
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[1.]
- [2.]
- [3.]
- [4.]]
-</pre>
+
+
+<div class="output_text output_subarea ">
+<pre>array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])</pre>
 </div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[1., 1., 1., 1.],
+       [1., 1., 1., 1.],
+       [1., 1., 1., 1.]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([10,  8,  6,  4,  2])</pre>
+</div>
+
 </div>
 
 </div>
@@ -13269,11 +13888,7 @@ b = [[0]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<ol>
-<li>乘法的符号，注意区分： <em> , .dot , .cross, .</em>。</li>
-<li>"1."？ 1是一个浮点数，表示带小数。此时小数部分=0，因为1.0 = 1，所以省略了小数部分，变成 “1.”。值得注意的是Python是一种弱变量语法，它不需要显示定义数据类型，因此数据类型之间根据需要可以在一定范围内自动进行转换。例如在产生分数的时候，整型就自动转换为了浮点型。本题中，由于后面的乘法运算，将分数部分约分了，所以就以浮点型的形式显示整数，如：1.，2.，3.。</li>
-</ol>
+<p><em>注意：此处以创建二维数组为例，你传入一个数字，就可以创建一维数组；你传入三个数字，就可以创建三维数组，可以自己下去试一试。</em></p>
 
 </div>
 </div>
@@ -13281,37 +13896,90 @@ b = [[0]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>3. 第三题：</strong> $u=(3,2,2), v=(5,3,1)$， 求 $u$ 和 $v$ 的内积（点乘）和外积（叉乘）。</p>
-<p>解：</p>
-<p>$u·u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-· \begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= 3*5 + 2*3 + 2*1
-= 15 + 6 + 2
-= 23$</p>
-<p>$u \times u=
-\begin{bmatrix} 3 \\ 2 \\ 2 \end{bmatrix}
-\times
-\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}
-= \begin{bmatrix} u_2v_3-u_3v_2 \\ u_3v_1-u_1v_3 \\ u_1v_2-u_2v_1 \end{bmatrix}
-= \begin{bmatrix}  2*1-2*3 \\ 2*5-3*1 \\ 3*3-2*5 \end{bmatrix}
-= \begin{bmatrix} -4 \\ 7 \\ -1 \end{bmatrix}$</p>
+<h4 id="&#21019;&#24314;&#21333;&#20301;&#30697;&#38453;&#21644;&#23545;&#35282;&#30697;&#38453;">&#21019;&#24314;&#21333;&#20301;&#30697;&#38453;&#21644;&#23545;&#35282;&#30697;&#38453;<a class="anchor-link" href="#&#21019;&#24314;&#21333;&#20301;&#30697;&#38453;&#21644;&#23545;&#35282;&#30697;&#38453;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## np.eye(x)和 np.identity(x)</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#21019;&#24314;&#31561;&#24046;&#25968;&#21015;&#25968;&#32452;">&#21019;&#24314;&#31561;&#24046;&#25968;&#21015;&#25968;&#32452;<a class="anchor-link" href="#&#21019;&#24314;&#31561;&#24046;&#25968;&#21015;&#25968;&#32452;">&#182;</a></h4><ul>
+<li>np.arange(start,stop,step)第三个参数指的是元素步长；</li>
+<li>np.linspace(start,stop,num)第三个参数指的是元素个数；</li>
+</ul>
+<p>np.arange()取不到最大的那个值stop，np.linspace()默认可以取到最大值stop；</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array1</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
-<span class="n">dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>  <span class="c1"># 不是数学规则，而是程序的限制，大家只需要记住</span>
-<span class="n">cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;点乘：</span><span class="si">{}</span><span class="s1">，叉乘：</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span> <span class="n">cross</span><span class="p">))</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array2</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13327,10 +13995,104 @@ b = [[0]
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>点乘：[[23]]，叉乘：[[-4  7 -1]]
-</pre>
+
+
+<div class="output_text output_subarea ">
+<pre>array([ 1,  4,  7, 10, 13])</pre>
 </div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>dtype(&#39;int32&#39;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([ 1.,  8., 15.])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>dtype(&#39;float64&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#36890;&#36807;&#33258;&#23450;&#20041;&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;">&#36890;&#36807;&#33258;&#23450;&#20041;&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;<a class="anchor-link" href="#&#36890;&#36807;&#33258;&#23450;&#20041;&#20989;&#25968;&#21019;&#24314;&#25968;&#32452;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 定义一个函数</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1">## 从一个函数生成一个二维数组；</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfunction</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1">## 在这个函数，f函数要接收的参数，就是当前元素的坐标；</span>
+<span class="c1">## 0行0列，传入的就是x=0,y=0;</span>
+<span class="c1">## 0行1列，传入的就是x=0,y=1;</span>
+<span class="c1">## 3行2列，传入的就是x=3,y=2;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([[1, 2, 3],
+       [3, 4, 5],
+       [5, 6, 7]])</pre>
+</div>
+
 </div>
 
 </div>
