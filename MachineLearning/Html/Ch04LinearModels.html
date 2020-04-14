@@ -13093,29 +13093,21 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-&#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;">1. &#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;<a class="anchor-link" href="#1.-&#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;">&#182;</a></h2><p>线性模型是统计学中的一个术语，被广泛应用到基于机器学习的多个领域中，甚至被很多研究人员集成到诸如神经网络的复杂系统中。</p>
-<p>在机器学习中，常见的线性模型包括：线性回归（Linear Regression）、岭回归（Ridge Regression）、套索回归（Lasso Regression)、逻辑回归（Logistic Regression）、线性SVC等。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-&#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;">1. &#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;<a class="anchor-link" href="#1.-&#32447;&#24615;&#27169;&#22411;&#30340;&#22522;&#26412;&#27010;&#24565;">&#182;</a></h2><p>线性模型是统计学中的一个术语，被广泛应用到基于机器学习的多个领域中，甚至被很多研究人员集成到诸如神经网络的复杂系统中。在机器学习中，常见的线性模型包括：线性回归（Linear Regression）、岭回归（Ridge Regression）、套索回归（Lasso Regression)、逻辑回归（Logistic Regression）、线性SVC等。</p>
 <h3 id="1.1-&#32447;&#24615;&#27169;&#22411;&#30340;&#25968;&#23398;&#34920;&#36798;">1.1 &#32447;&#24615;&#27169;&#22411;&#30340;&#25968;&#23398;&#34920;&#36798;<a class="anchor-link" href="#1.1-&#32447;&#24615;&#27169;&#22411;&#30340;&#25968;&#23398;&#34920;&#36798;">&#182;</a></h3><p>线性模型的一般公式为：</p>
 <p>$\hat{y} = w[0]*x[0] + w[1]*x[1] + ... + w[p]*x[p] + b$</p>
 <p>其中,</p>
 <ul>
-<li>$x[0],x[1],...x[p]$ 数据集中样本的特征值;</li>
+<li>$x[0],x[1],...x[p]$ 是数据集中的特征变量;</li>
 <li>参数 $p$ 表示每个样本都有 $p$ 个特征；</li>
 <li>$w$ 和 $b$ 是模型的参数；</li>
-<li>$\hat{y}$ 是模型对给定数据的预测结果， $\hat{y}$ 读作：<em>y hat</em>，一般来说 <em>hat</em> 表示估计值。</li>
+<li>$\hat{y}$ 是模型对给定数据的预测结果， $\hat{y}$ 读作：<em>y hat</em>，一般来说 <em>hat</em> 表示估计值。。</li>
 </ul>
 <p>若数据只有一个特征变量，则线性模型可以被简化为:</p>
-<blockquote><p>$\hat{y} = w[0]*x[0] + b$</p>
-</blockquote>
-<p>对于<code>简化模型</code>来说，$\hat{y}$ 就是一条直线方程。 $w[0]$ 是直线的斜率，也称为权重；$b$ 是 $y$ 轴的偏移量（截距）。</p>
+<p>$\hat{y} = w[0]*x[0] + b$</p>
+<p>对于简化模型来说，$\hat{y}$ 就是一条直线方程。 $w[0]$ 直线的斜率，也成为权重；$b$ 是 $y$ 轴的偏移量（截距）。</p>
 <p><strong><font color="red">模型的预测可以看作输入特征的加权和，参数 $w$ 代表的是每个特征的权值。 </font></strong></p>
+<hr>
 <p>假设有一条直线，其数学表达式为: $y = 0.5x + 3$，将其可视化后可以得到：</p>
 
 </div>
@@ -13123,7 +13115,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13161,8 +13153,10 @@ div#notebook {
 
 
 
-<div class="output_text output_subarea ">
-<pre>&lt;Figure size 640x480 with 1 Axes&gt;</pre>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -13174,15 +13168,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2-&#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;">1.2 &#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2-&#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.2.1-&#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.1 &#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.1-&#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><ul>
-<li>基于训练样本进行模型训练（使用模型来拟合训练数据）</li>
+<h3 id="1.2-&#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;">1.2 &#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2-&#32447;&#24615;&#27169;&#22411;&#30340;&#21487;&#35270;&#21270;">&#182;</a></h3><h4 id="1.2.1-&#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.1 &#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.1-&#22522;&#20110;&#20004;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><ul>
+<li>拟合样本及可视化</li>
 </ul>
 <p>假设存在坐标(1, 3) 和 (4, 5)，以这两点可以构建一条直线，同时可以获得过这两个点的直线方程</p>
 
@@ -13191,7 +13178,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 导入线性回归模型</span>
@@ -13203,83 +13190,13 @@ div#notebook {
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Microsoft YaHei&#39;</span><span class="p">]</span>
 
 <span class="c1"># 输入两个点的坐标，分别保存在矩阵 x 和 y 中</span>
-<span class="c1"># X是一个二维矩阵，这是因为 对于每个样本 X_i来说，它可能会包含多个特征，因此，默认情况会使用一个数组来表示</span>
 <span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="c1"># 使用线性模型拟合给定的样本点</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;+ </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>直线方程为：
-
-y = 0.667 x + 2.333
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>此处，变量 lr 是利用给定点和线性回归算法生成的“线性回归模型”，其中：</p>
-<ul>
-<li>lr.predict()可以实现对新样本的预测</li>
-<li>lr.coef_[0]是第一个特征的权重 $w$</li>
-<li>lr.intercept_是模型的偏移值（截距）</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><code>值得注意的是</code>：对于任意样本可能存在多个特征，因此对于X来说，需要将每个样本的特征X都保存在数组中，例如，如果存在两个样本，其中样本A特征为 $x_1 = [a_1, b_1, c_1]$, 值为$y_1$，样本B的特征为$x_2 = [a_2, b_2, c_2]$, 值为 $y_2$。则，矩阵定义应该为：</p>
-</blockquote>
-
-<pre><code>X = [[a1, b1, c1], [a2, b2, c2]]
-y = [y1, y2]</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>可视化方程曲线</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 画出点和基于点生成的直线</span>
+<span class="c1"># 画出点和基于点生成的直线</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># 生成 0到5之间，元素个数为20的等差数列</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 将矩阵转换为 n 行，1列的矩阵</span>
 
@@ -13322,12 +13239,57 @@ y = [y1, y2]</code></pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">z</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0.        , 0.26315789, 0.52631579, 0.78947368, 1.05263158,
+       1.31578947, 1.57894737, 1.84210526, 2.10526316, 2.36842105,
+       2.63157895, 2.89473684, 3.15789474, 3.42105263, 3.68421053,
+       3.94736842, 4.21052632, 4.47368421, 4.73684211, 5.        ])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.2.2-&#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.2 &#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.2-&#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><p>假设存在三个坐标点：(1, 3)、 (4, 5)、 (3, 3)</p>
+<p>此处，值得注意的是：对于任意样本可能存在多个特征，因此对于X来说，需要将每个样本的特征X都保存在序列中，例如，如果存在两个样本，其中样本A特征为 $x_1 = [a_1, b_1, c_1]$, 值为$y_1$，样本B的特征为$x_2 = [a_2, b_2, c_2]$, 值为 $y_2$。则，矩阵定义应该为：</p>
+
+</div>
+</div>
+</div>X = [[a1, b1, c1], [a2, b2, c2]]
+y = [y1, y2]
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>基于训练样本进行模型训练（使用模型来拟合训练数据）</li>
+<li>生成拟合后的直线方程</li>
 </ul>
 
 </div>
@@ -13335,25 +13297,10 @@ y = [y1, y2]</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 导入线性回归模型</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># 配置参数使 matplotlib绘图工具可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Microsoft YaHei&#39;</span><span class="p">]</span>
-
-<span class="c1"># 输入三个点的坐标，分别保存在矩阵 x 和 y 中</span>
-<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="c1"># 使用线性模型来拟合这3个样本点</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;+ </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">))</span>
 </pre></div>
 
@@ -13385,7 +13332,7 @@ y = 0.571 x + 2.143
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>从结果来看，直线并没有经过任何一个样本点，实际上拟合出来的直线并非刻意不经过任何样本，而是位于所有样本点加权和最小的位置。</p>
+<p>此处，变量 lr 是利用给定点和线性回归算法生成的“线性回归模型”，其中lr.predict()可以实现对新样本的预测，lr.coef_[0]是第一个特征的权重 $w$，lr.intercept_是模型的偏移值（截距）。</p>
 
 </div>
 </div>
@@ -13393,8 +13340,9 @@ y = 0.571 x + 2.143
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.2.2-&#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.2 &#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.2-&#22522;&#20110;&#19977;&#20010;&#25968;&#25454;&#28857;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><p>假设存在三个坐标点：(1, 3)、 (4, 5)、 (3, 3)</p>
 <ul>
-<li>可视化方程曲线</li>
+<li>拟合样本及可视化</li>
 </ul>
 
 </div>
@@ -13402,10 +13350,25 @@ y = 0.571 x + 2.143
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 画出点和基于点生成的直线</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 导入线性回归模型</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 配置参数使 matplotlib绘图工具可以显示中文</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Microsoft YaHei&#39;</span><span class="p">]</span>
+
+<span class="c1"># 输入三个点的坐标，分别保存在矩阵 x 和 y 中</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># 使用线性模型来拟合这3个样本点</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 画出点和基于点生成的直线</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># 生成 0到5之间，元素个数为20的等差数列</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 将矩阵转换为 n 行，1列的矩阵</span>
 
@@ -13451,8 +13414,7 @@ y = 0.571 x + 2.143
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<p>拟合的结果通常是一种近似，它的目标是满足大多数样本距离最近原则。在使用两个样本的时候，我们知道两点可以确定一条直线；而使用三个样本的时候，就不一定能三点共线了。</p>
+<p>从结果来看，直线并没有经过任何一个样本点，实际上拟合出来的直线并非刻意不经过任何样本，而是位于所有样本点加权和最小的位置。</p>
 
 </div>
 </div>
@@ -13460,9 +13422,8 @@ y = 0.571 x + 2.143
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.2.3-&#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.3 &#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.3-&#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><p>此处，我们使用make_regression()函数来生成用于回归分析的数据集。</p>
 <ul>
-<li>拟合样本并生成模型</li>
+<li>生成拟合后的直线方程</li>
 </ul>
 
 </div>
@@ -13470,7 +13431,52 @@ y = 0.571 x + 2.143
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;+ </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>直线方程为：
+
+y = 0.571 x + 2.143
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.2.3-&#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">1.2.3 &#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;<a class="anchor-link" href="#1.2.3-&#22522;&#20110;&#22810;&#26679;&#26412;&#30340;&#27169;&#22411;&#25311;&#21512;&#21644;&#21487;&#35270;&#21270;">&#182;</a></h4><p>此处，我们使用make_regression数据集作为样本来生成曲线。</p>
+<ul>
+<li>拟合样本及可视化</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 导入线性回归模型等多个库</span>
@@ -13489,7 +13495,82 @@ y = 0.571 x + 2.143
 <span class="c1"># 使用线性模型来拟合这3个样本点</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># 画出点和基于点生成的直线</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># 生成 -3到3之间，元素个数为200的等差数列</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 将矩阵转换为 n 行，1列的矩阵</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">40</span><span class="p">)</span> <span class="c1"># s为散点的尺度</span>
+<span class="c1"># 可视化预测结果，其中：</span>
+<span class="c1"># 横坐标： 变量 z;</span>
+<span class="c1"># 纵坐标： 基于 变量 z 和 线性模型 lr 生成的预测值。</span>
+<span class="c1"># 第三个参数c：线的颜色</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span> 
+
+<span class="c1"># 设定图的显示信息并显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;线性回归&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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EREREREJOQUNEREREZEYtWvXrmgPIWgKGiIiIiIiMWjevHkcd9xxzJ8/P9pDCYqChoiIiIhIDNm0aRNXX301ffr04YcffmDQoEFs27Yt2sMKmIKGiIiIiEgMsNby4osv4na7efbZZ73tP/74I4sWLYriyIKjoCEiIiIiEmUbNmzg0ksv5c9//jMbN270tp900kmsXLmSc889N4qjC46ChoiIiIhIlFhryc7Oxu1289prr3nbGzRowIQJE/jkk0/IyMiI4giDVyfaAxARERERSUbfffcdgwYN4v333/dpP/PMM3niiSc45phjojSy0NCMhoiIiIhIBO3bt4+JEyfSrl07n5CRmprKzJkzmT9/ftyHDNCMhoiIiIhIxOTl5ZGVlcXSpUt92i+++GKmTZvGEUccEaWRhZ5mNEREREREwmz37t3cd999dO7c2SdkHHLIIbzwwgu88sorCRUyQDMaIiIiIiJhtXz5crKysli7dq1P+9/+9jceeeQRDjrooCiNLLw0oyEiIiIiEgbbt29n1KhRdO/e3SdktGzZkrfeeotnnnkmYUMGaEZDRERERCTkPvzwQwYOHMi3337r0z5kyBDGjRtH06ZNozSyyFHQEBEREREJkeLiYm677TYef/xxn/bjjjuOmTNncuqpp0ZpZJGnR6dERERERELgzTffJCMjwydk1K5dm9tvv53Vq1cnVcgAzWiIiIiIxARroagISkqgSRNwucCYaI9K/LFx40ZGjhzJ888/79PesWNHsrOz6dq1a5RGFl2a0RARERGJouJimDwZ3G5o3hxat3aObjdMmeKcl9hkreX555/H7Xb7hIy6desyZswYli9fnrQhAxQ0RERERKImJwfatIGRI6GgwPdcQQGMGOGcnz8/GqOTqvzvf//joosu4qqrrmLTpk3e9h49erBq1SruuusuUlJSojjC6FPQEBEREYmCnBzo08d5XKoqRUXQu7fCRqwoLS1lxowZuN1u3nzzTW97w4YNmTRpEgsXLiQ9PT2KI4wdWqMhIiIiEmHFxdCvH+zZ41//PXugb18oLITU1LAOTarwzTffMGjQID788EOf9rPPPpsZM2Zw9NFHR2dgMUozGiIiIiIRNmtW9TMZFRUVwezZ4RmPVG3v3r089NBDtG/f3idkuFwunnrqKd59912FjANQ0BARERGJIGth+vTgrp02zble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KI5OYpWChoiIiEiIFBXtv/DbXwUFgc+EhNvvv//O0KFDOe200/j666+97W3btuWDDz7gscceIzUenveSqFDQEBEREQmRkpLoXh9K8+bNIyMjg+nlpmhq1arF3//+d9asWcPpp58evcFJXNBicBEREZEQadIkuteHwqZNm7jpppt47rnnfNrbt29PdnY2J5xwQpRGJvFGMxoiIiIiIeJyQVpacNempTnXR4u1lhdeeAG32+0TMlJSUrjvvvv47LPPFDIkIAoaIiIiIiFiDAwZEty1Q4c610fDhg0buOSSS7jyyivZuHGjt/2kk05i5cqVjB49mrp160ZncBK3FDREREREQmjAgMBnJlwu6N8/POOpirWWmTNn4na7ef31173tDRs2ZOLEiXzyySdkZGREfmCSEBQ0REREREIoNRXmzIGUFP/6p6Q4/SO9edO3335LZmYmgwYNori42Nt+1llnsXbtWm666SZq164d2UFJQlHQEBEREQmxzEyYN6/6mQ2Xy+mXmRmZcQHs27ePCRMm0L59e95//31ve2pqKjNnziQnJ4djjjkmcgOShKWgISIiIhIGmZlQWAiTJ++/QDw9HaZMcc5HMmTk5uZy8sknc+utt7Jjxw5v+8UXX0x+fj5ZWVmYaC0UkYSj7W1FREREwiQ1FYYPh2HDnGJ8JSXOFrYuV2QXfu/evZuxY8fyr3/9iz179njbDz30UB599FGuuOKKAwYMa6M7bolvmtEQERERCTNjoFkzaNXKOUbyw/ry5cvp2rUr9957r0/IuPrqq8nPz6dv3777hYziYmcmxu2G5s2hdWvn6HY7MzHllnSIVEpBQ0RERCQBbd++nb///e90796d3Nxcb/tRRx3FvHnzmD17NgcddNB+1+XkQJs2MHIkFBT4nisogBEjnPPz54d3/BL/FDREREREEswHH3xAhw4dePjhhyktLfW2Dx06lNzcXM4///wDXpeTA336OI9LVaWoCHr3VtiQqiloiIiIiCSI4uJirr/+es4880y+/fZbb/txxx3HRx99xNSpU2natGkl10K/flDu6aoq7dkDffvqMSqpnIKGiIiISAJ44403cLvdPP7449622rVrc/vtt7N69WpOPfXUKq+fNav6mYyKiopg9uxgRivJQEFDREREJI5t3LiRq666iosuuogNGzZ42zt27MjSpUsZN24cDRo0qPIe1sL06cG9/rRpzvUiFSloiIiIiMQhay3/+c9/SE9P5/nnn/e2161bl3/961/e3ab8UVS0/8JvfxUUBD4TIslBdTRERERE4sz//vc/hgwZwptvvunT3qNHD7Kzs0lPTw/ofiUlNRtPSYmzba9IeZrREBEREYkTpaWlzJgxA7fb7RMyGjVqxOTJk1m4cGHAIQOcYnw1UdPrJTFpRkNEREQkDnz99dcMGjSIjz76yKf97LPP5vHHH6dNmzZB39vlgrS04B6fSktzrhepSDMaIiIiIjFs7969PPTQQ3To0MEnZLhcLp566inefffdGoUMcCqVDxkS3LVDh0a20rnEDwUNERERkRi1Zs0aevTowahRo9i5c6e3/bLLLuOLL77gmmuuwYToU/6AAYHPTLhc0L9/SF5eEpCChoiIiEiM2bVrF/fccw9du3bls88+87a3aNGCl156iblz53LYYYeF9DVTU2HOHEhJ8a9/SorTPzU1pMOQBKKgISIiIhJDPv30U7p06cJ9993H3r17ve0DBgwgPz+fyy+/PGyvnZkJ8+ZVP7Phcjn9MjPDNhRJAAoaIiIiIjFg27Zt3HzzzZx88snk5+d721u1asU777zD008/TfPmzcM+jsxMKCyEyZOdhd7lpafDlCnOeYUMqY52nRIRERGJsgULFjBo0CC+//57b5sxhmHDhvGvf/2LJhHePzY1FYYPh2HDnGJ8JSXOFrYulxZ+i/8UNERERESipKioiL///e9kZ2f7tB9//PFkZ2fTs2fPKI3MYYxTiE/F+CQYenRKREREJApee+013G63T8ioXbs2//d//8eqVauiHjJEakozGiIiIiIR9MsvvzBixAhefPFFn/bOnTvz5JNP0qlTpyiNTCS0NKMhIiIiEgHWWp555hncbrdPyKhXrx5jx45l6dKlChmSUDSjISIiIhJm69ev54YbbuDtt9/2aT/llFOYOXMmxx9/fJRGJhI+mtEQERERCZPS0lKmTZtGRkaGT8ho3LgxU6dO5aOPPlLIkISlGQ0RERGRMPjqq68YOHAgCxcu9Gk/77zzeOyxx2jdunWURiYSGZrREBEREQmhvXv38uCDD9KhQwefkNG8eXNmz57NvHnzFDIkKWhGQ0RERKplrQq3+WPVqlVkZWWxYsUKn/a+ffsyZcoUWrRoEaWRiUSeZjRERERimLWwZQusX+8crY3s6xcXw+TJ4HZD8+bQurVzdLthyhTnvMDOnTu566676Natm0/IOOyww3j55Zd58cUXFTIk6ShoiIiIxKBY+ICfkwNt2sDIkVBQ4HuuoABGjHDOz58f/rHEssWLF9O5c2ceeOAB9u3b522/7rrryM/P59JLL43i6ESiR0FDREQkxsTCB/ycHOjTx3lcqipFRdC7d3KGja1btzJixAhOOeUUCsr9j2rTpg05OTlkZ2fTrFmzKI5QJLoUNERERGJILHzALy6Gfv1gzx7/+u/ZA337JtdjVO+99x7t2rVjypQpWM/zbMYYbrrpJpkVchUAACAASURBVHJzc8nMzIzyCEWiT0FDREQkRsTKB/xZs6oPOhUVFcHs2aEdRyzasmUL1157Leeeey7r1q3ztqenp/PJJ58wceJEGjVqFPW1NSKxQEFDREQkRsTCB3xrYfr04K6dNi2xP1C//PLLuN1unn76aW9bnTp1GD16NCtXrqRHjx4xsbZGJFYYm8h/I0SIMSbP7Xa78/Lyoj0UERGJU9Y6H0YrrsnwR1oa5OeHZrvZLVucD8bB+u03iPdlCRW38t2582eGDx/G3Llzffp17dqV7OxsOnbsCDiPvfXrV3VYdLlgzhzQk1USDzIyMsjPz8+31mYEc71mNERERGJAUVFwIQOc6wKdCalMSUl0r4+m/WcjLM2bP03Llm6fkFG/fn3Gjx/Pp59+6hMyor22RiTWqGCfiIhIDAjFB/xQzCQ0aRLd66Nl/9mIQuB64D1KS//o1779qcydO5PjjjvO2xbs2prCQkhNDcnwRWKSZjRERERiQKx8wHe5nEexgpGW5lwfb3xnI0qBKUA74L1yvZoA0/niiw9Yt+44n+tjYW2NSCxS0BAREYkBsfIB3xgYMiS4a4cODc06kUjynY0oAE4FRgDbyvXqDeQBN7B3by2fnb60eF6kcgoaIiIiMSCWPuAPGBB4cHG5oH//0I0hUpzZiD3AA0BH4JNyZw8CngXeBI7ytpafjYiVtTUisUhBQ0REJEbEygf81FRnZ6SUFP/6p6Q4/eNtvYG1MHHiCuBE4C5gd7mzVwL5wF+B/VNc2WxEMi+eF6mOgoaIiEiMiKUP+JmZMG9e9cHH5XL6xdt2rTt27OCWW+6ksPBEYFW5M0cArwHPA4dWen3ZbESsrK0RiUUKGiIiIjEklj7gZ2Y6OyNNnrz/+pH0dKcAXWFh/IWMRYsW0alTJx55ZBywr9yZQTizGBf5dZ+SkthZWyMSixQ0REREYkwsfcBPTYXhw52CgL/9BuvWOce8PBg2LL4elyopKWHYsGH06tWLr776qtyZY4AFwOOA/z9QkyaxtbZGJNaoMngIqDK4iIiES8Uq1S6XPpwG45133uH6669n/fr13rZatWqRmnoTW7bcDzQM6H7lq7EXF0ObNoEt7Ha5VEdDYp8qg4uIiCQwY5xCfK1aOUeFjMBs3ryZAQMGcP755/uEjIyMDBYvXsy99z5MoCEDfGcjYmltjUgsUdAQERGRhGOtZc6cObjdbmaXq4yXkpLCPffcw4oVKzjppJNCttNXLK2tEYkVChoiIiKyH2thyxZYv945xtOT1j/99BOXXXYZ/fr149dff/W2n3DCCXz++efce++91K1bFwjtbEQsra0RiQUKGiIiIuJVXOx8UHa7oXlzaN3aObrdzgflsorYschay5NPPkl6ejqvvvqqt71BgwY8/PDDLFmyhPbt2+93XShnIxJp8bxITSloiIiICAA5Oc6i5pEj9692XVAAI0Y45+fPj8boqvb9999zzjnnkJWVRXG5NHTGGWewdu1abrnlFmrXrl3p9aGejdDaGhEFDREREcEJGX36VL9zUlER9O4dO2Fj3759TJo0iXbt2jG/3KCaNm3K448/zoIFC2jbtq1f99JshEho1Yn2AERERCS6iouhXz/Ys8e//nv2QN++0d+eNT8/n6ysLD799FOf9gsvvJDp06dz5JFHBnXfstmIZs1CMUqR5KUZDRERkSQ3a1ZgNSDA6V9uM6eI2r17N/fffz+dO3f2CRkHH3wwzz//PK+99lrQIUNEQkdBQ0REJIlZC9OnB3fttGmR343qs88+44QTTuDuu+9m9+7d3va//vWvfPHFF1x55ZUYLYgQiQkKGiIiIkmsqGj/hd/+KigIfCYkWDt27OC2227jpJNOYs2aNd72li1b8uabb/Lss89y8MEHR2YwIuKXmAsaxphUY8yTxpglVfQ5yBgzxRizzhizyxhTaIx52BjTpJL+DY0xY4wxXxtjdhpjNhhjZhpjWoTvJxEREYl9JSXRvd4fH330ER06dODf//43paWl3vYbbriBvLw8+vTpE/5BiEjAYiZoeMLACOBr4FrggPOexpjDgRXAMKA28CnQ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lIiIiPjYtWsXd999N127dvUJGS1atOCll17ipZdeCnnISCbWwpYtsH69c9QGoJKoFDRERETEa8mSJXTu3Jn777+fvXv3etuvueYa8vPzufzyy6M4uvhWXOysRXG7oXlzaN3aObrdzlqU4uJoj1AktBQ0REREhG3btnHTTTfRs2dPvvjiC29769ateffdd3nqqado3rx5FEcY33JynLohI0dCQYHvuYICGDHCOT9/fjRGJxIeChoiIiJJbv78+bRr145JkyZRVsjXGMPw4cPJzc3lnHPOifII41tODvTpU31xwqIip66IwoYkCgUNERGRJFVUVERWVhZnn302hYWF3va0tDQWLlzI5MmTady4cfQGmACKi6FfP/+KEoLTr29fPUYliUFBQ0REJAm9+uqruN1unnzySW9b7dq1ueuuu1i5ciU9e/aM4ugSx6xZ1c9kVFRUBLNnh2c8IpGkoCEiIpJEfvnlF/r168ell17KTz/95G3v3Lkzn332GWPGjKF+/fpRHGHisBamTw/u2mnTtBuVxD8FDRERkSRgreWZZ57B7XYzZ84cb3u9evUYN24cy5Yto1OnTlEcYeIpKtp/4be/CgoCnwkRiTUq2CciIpLg1q9fz/XXX88777zj037KKacwc+ZMjj/++CiNLLGVlNT8ehUvlHimGQ0REZEEVVpaytSpU8nIyPAJGY0bN2bq1Kl89NFHChlh1KRJdK8XiTbNaIiISMKy1nn8pKTE+dDmcoEx0R5VZHz55ZcMHDiQRYsW+bSfd955zJgxg1atWkVpZMnD5YK0tOAen0pLc64XiWea0RARkYSTzBWY9+7dy7hx4+jYsaNPyGjevDmzZ89m3rx5ChkRYgwMGRLctUOHJk8olsSloCEiIgklmSswr1q1ipNOOok777yTXbt2edv79etHfn4+V199NSZGP71aC1u2wPr1zjFRdlwaMCDwmQmXC/r3D894RCJJQUNERBJGslZg3rlzJ3fddRfdunVjxYoV3vbDDjuMV155hRdeeIEWLVpEcYSVS/TZp9RUmDMHUlL865+S4vRPTQ3vuEQiQUFDREQSQrJWYP7kk0/o1KkTDzzwAPv27fO2Z2VlkZ+fzyWXXBLF0VUtWWafMjNh3rzqZzZcLqdfZmZkxiUSbgoaIiKSEJKtAvPWrVsZMWIEvXr14ssvv/S2t2nThpycHGbO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VhFj5LbbbqOwsDAtZGywwQZcffXVvPLKK4YMSZKkOjiiIdXw/vvvc8oppzB9+vS09gMOOIBbb72VHXfcMUuVSZIk5RZHNCRg5cqV3HDDDfTq1SstZHTu3JlbbrmFp556ypAhSZLUAI5oqM0rLS1lyJAhvPLKK2ntRxxxBOPHj2ebbbbJUmWSJEm5yxENtVnffvstl1xyCbvttltayNh000255557ePTRRw0ZkiRJjeSIhtqk119/ncGDBzNnzpy09hNOOIEbbriBTTfdNEuVSZIktQ6OaKhNWbp0KWeddRb9+/dPCxlbb701jz32GHfddZchQ5IkKQMc0VCb8dxzzzFkyBD+8Y9/pLWfeuqpXHHFFeTn52epMkmSpNbHoKFWb/HixZx99tncfPPNae077LADEydO5IADDshOYZIkSa2YU6fUqv3lL3+hZ8+eaSGjXbt2nHnmmcyZM8eQIUmS1Ewc0VCr9O9//5vf/OY33HXXXWntvXv3pri4mD322CNLlUmSJLUNjmioVYkxcu+991JYWJgWMvLy8rjooot4/fXXDRmSJEnrgCMaajX+9a9/MXz4cB599NG09v79+1NcXEzPnj2zVJkkSVLb44iGcl6MkVtvvZVUKpUWMjbccEOuu+46XnrpJUOGJEnSOuaIhnLae++9x9ChQ3nmmWfS2n/0ox8xYcIEtt9++yxVJkmS1LY5oqGctHLlSq699lp69+6dFjLy8/OZOHEiJSUlhgxJkqQsckRDOWfu3LkMHjyY1157La39qKOOYty4cWy11VZZqkySJElVHNFQzvj222/505/+xO67754WMjbffHPuu+8+HnroIUOGJElSC+GIhnLCa6+9xuDBg5k7d25a+4knnsh1113HJptsssZrY4SyMliyBDp1goICCKG5K5YkSWrbHNFQi/b1119z5plnMmDAgLSQse222zJ16lTuuOOONYaM8nIYMwZSKejaFbp1S46pFIwdm5yXJElS8zBoqMV65pln6N27N9dccw0VFRXV7cOHD2fu3Lkcdthha7y2pAS6d4fRo2H+/PRz8+fDqFHJ+enTm6d2SZKkts6goRanvLycU089lQMPPJB//vOf1e077bQTzz33HDfddBOdO3de4/UlJTBwYDJdam3KyuDwww0bkiRJzcGgoRblscceI5VKMWHChOq29u3bc8455zB79mz2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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>值得注意的是，拟合所生成的直线是整个平面中的所有直线中，距离所有样本数据点距离之和是最小的一条。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><font style="color:red; font-weight:bold;">【知识点】[reshape(-1, 1)](functions/reshape.ipynb)</font></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>生成拟合后的直线方程</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;直线方程为：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;+ </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
@@ -13525,85 +13606,10 @@ y = 79.525 x + 10.922
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>值得注意的是，拟合所生成的直线是整个平面中的所有直线中，距离所有样本数据点距离之和是最小的一条。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><em>在sciki-learn工具包中，所有的数据属性都以“_”结尾，以便和其他自定义变量做区分，例如coef_表示权重系数，intercept_表示截距。</em></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>可视化直线方程</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><font style="color:red; font-weight:bold;">【知识点】[reshape(-1, 1)](functions/reshape.ipynb)</font></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 画出点和基于点生成的直线</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># 生成 -3到3之间，元素个数为200的等差数列</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 将矩阵转换为 n 行，1列的矩阵</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">40</span><span class="p">)</span> <span class="c1"># s为散点的尺度</span>
-<span class="c1"># 可视化预测结果，其中：</span>
-<span class="c1"># 横坐标： 变量 z;</span>
-<span class="c1"># 纵坐标： 基于 变量 z 和 线性模型 lr 生成的预测值。</span>
-<span class="c1"># 第三个参数c：线的颜色</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span> 
-
-<span class="c1"># 设定图的显示信息并显示图片</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;线性回归&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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9evHzp07AejTpw9PP/009erVC3FkFVegJlY2dD8vLKJtME4hqgY4Ey6rA28CgzwnWGvfNsYMxUke6gH/BW601uYFKF4REYlQv/zyC8OHD+ell14CoGnTpqSkpHDVVVeFOLKKT1uBi4hIRLLWsmjRIgYOHMiPP/6IMYahQ4fy+OOPU7NmzdIvUElpK3AREQmaHTtg3jzYuxdiY6F3b2jWLLQxff/99wwcOJA33ngDgFatWpGWlkbXrl1DG1iEUU+EiIj4JDcXBg6E1FSIinIeLpfzSEiApCQIdpFHay3p6ekMHz6c3377jSpVqjBq1ChGjx5NtWrVghtMBaWeCBERCThPAmEt5OU5D4/UVOc5OTl48ezYsYO+ffuyYsUKADp27EhaWhrt27cPXhCVTFDKXouISGTJzs5PIIpirdO+o/AGBgGQl5fHs88+S5s2bVixYgXVq1fnqaeeYu3atUogAkxJhIiIlNmrrzrDFyWJinLmSgRSVlYW3bp1Y9iwYRw+fJju3buzYcMGHnjgAapUUWd7oCmJEBGRMtu717skYu/ewLx/bm4uEyZM4MILL+STTz6hVq1aPP/886xcuZI//elPgXlTOYnSNBERKbPYWGcCZUlcLuc8f/vss8/o06cPGzduBOD6669n9uzZNGlSeLcECTT1RIiISJn16uVdEtG7t//e8/fff2fkyJFcfPHFbNy4kdNOO41XXnmFd955RwlEiCiJEBGRMmve3FnGWdxeVcY47f6qF7Fq1Srat2/PU089hcvl4p///CdZWVn07t1bG2aFkJIIERHxSVJSfiIRHe3UhIiOzk8gkpLK/x779++nf//+XH755Wzbto1GjRrx5ptv8tprr3HGGWeU/w2kXFRsSkREyqVgxcqGDZ2hDn/0QCxZsoR+/fqxe/duABITE3nqqaeoW7du+S8uxSpLsSklESIiElZ+/vlnhg0bxjz3+tDmzZuTkpJCjx49Tjo3HEtuV3RKIpREiIhUONZaFixYwODBg/npp5+Iiopi2LBhPP7445x66qknnBuOJbcjhcpei4hIhbJnzx769+/PW2+9BUDr1q1JS0ujc+fORZ4fbiW3KytNrBQRkZCx1pKamkpcXBxvvfUWMTExPProo2RmZhabQIRTye3KTkmEiIiExPbt27nyyitJTEwkJyeHiy66iM8++4xx48ZRtWrVYl8X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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13622,8 +13628,7 @@ y = 79.525 x + 10.922
 <p>为什么线性回归模型依然有效？</p>
 <ol>
 <li>线性回归能够模拟的数据远不止线性关系，并且回归中的“线性"指的是系数的线性，通过特征的非线性变换及广义线性模型的推广，输出和特征之间可以是高度非线性的；</li>
-<li>线性模型的易解释性让它在物理学、经济学、商学等领域具有不可替代的地位；</li>
-<li>逻辑回归（Logistics Regression）目前也是基于深度模型的目标检测任务中最常用的回归器。</li>
+<li>线性模型的易解释性让它在物理学、经济学、商学等领域具有不可替代的地位。</li>
 </ol>
 
 </div>
@@ -13632,14 +13637,7 @@ y = 79.525 x + 10.922
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-&#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear-Regression&#65289;">2. &#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear Regression&#65289;<a class="anchor-link" href="#2.-&#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear-Regression&#65289;">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.1-&#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;">2.1 &#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;<a class="anchor-link" href="#2.1-&#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;">&#182;</a></h3><p>线性回归也称为普通最小二乘法（Ordinary Least Squares，OLS），其原理是：<strong>找到一个超平面（一维数据时为直线，二维数据时为平面，高维数据时为超平面），该超平面上所有的预测值 $\hat{y}$ 和真实值 $y$ 的平方差是所有超平面中最小的。</strong> 其数学表达(<strong>损失函数Loss</strong>)为：$argmin||X \theta - y||^2$。</p>
+<h2 id="2.-&#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear-Regression&#65289;">2. &#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear Regression&#65289;<a class="anchor-link" href="#2.-&#26368;&#22522;&#26412;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#32447;&#24615;&#22238;&#24402;&#65288;Linear-Regression&#65289;">&#182;</a></h2><h3 id="2.1-&#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;">2.1 &#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;<a class="anchor-link" href="#2.1-&#32447;&#24615;&#22238;&#24402;&#27169;&#22411;&#30340;&#22522;&#26412;&#21407;&#29702;">&#182;</a></h3><p>线性回归也称为普通最小二乘法（Ordinary Least Squares，OLS），其原理是：<strong>找到一个超平面（一维数据时为直线，二维数据时为平面，高维数据时为超平面），该超平面上所有的预测值 $/hat{y}$ 和真实值 $y$ 的平方差是所有超平面中最小的。</strong> 其数学表达式（<code>损失函数Loss</code>）为: $argmin||X \theta -y||^2$。</p>
 <p>寻找超平面的过程就是求解该超平面参数的过程，对于线性回归模型，参数包括:每个特征的权值 $w_i$ 和 截距 <em>b</em>。假设数据集中的样本具有<em>n</em>个特征，那么，参数个数为 <em>n+1</em>。</p>
 <p>线性回归模型没有需要用户调节的参数，这类参数，我们将其称为<strong>超参数</strong>。它的优点是简单，缺点是无法调节模型的复杂性。</p>
 
@@ -13662,7 +13660,7 @@ y = 79.525 x + 10.922
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -13671,10 +13669,10 @@ y = 79.525 x + 10.922
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_regression</span>
 
 <span class="c1"># 1. 使用make_regression()函数生成一个样本数为1000，特征数为2的的数据集</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_regression</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_regression</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">38</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># 2. 使用train_test_split()函数对数据集进行划分</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -13684,7 +13682,8 @@ y = 79.525 x + 10.922
 <span class="c1"># 显示回归模型的方程及参数</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lr.coef_: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lr.intercept_: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;回归方程为：y = </span><span class="si">{0:.3f}</span><span class="s2">*x1 + </span><span class="si">{1:.3f}</span><span class="s2">*x2 + </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;回归方程为：&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{0:.3f}</span><span class="s2">*x1 + </span><span class="si">{1:.3f}</span><span class="s2">*x2 + </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13701,9 +13700,10 @@ y = 79.525 x + 10.922
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>lr.coef_: [ 6.57012851e+01 -1.82185535e-15  6.88888148e+01  2.69315916e-14]
-lr.intercept_: 6.439293542825908e-15
-回归方程为：y = 65.701*x1 + -0.000*x2 + 6.439293542825908e-15
+<pre>lr.coef_: [ 0.47026977 72.59456432]
+lr.intercept_: 0.0
+回归方程为：
+y = 0.470*x1 + 72.595*x2 + 0.0
 </pre>
 </div>
 </div>
@@ -13715,14 +13715,14 @@ lr.intercept_: 6.439293542825908e-15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>由结果可以看到，权重参数 <em>w</em> 是一个 <code>Numpy</code> 数组，截距参数 <em>b</em> 是一个浮点数。当样本具有多个特征值时（<em>n</em>），权重参数 <em>w</em> 也具有 <em>n</em> 个，总的参数个数就为 <em>n+1</em> 个。</p>
+<p>由结果可以看到，权重参数 <em>w</em> 是一个<code>Numpy</code>数组，截距参数 <em>b</em> 是一个浮点数。当样本具有多个特征值时（<em>n</em>），权重参数 <em>w</em>也具有 <em>n</em>个，总的参数个数就为 <em>n+1</em> 个。</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 4. 性能分析</span>
@@ -13760,7 +13760,7 @@ lr.intercept_: 6.439293542825908e-15
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font style="font-size:1.5em; font-weight:bold; color: red;">Surprise!</font></p>
-<p>这是一个令人惊讶的结果！是的,训练集和测试集的结果都是100%，多么令人开心啊！然而，这个结果确是一个不真实的，因为数据集中并没有噪声，即没有干扰样本。</p>
+<p>这是一个令人惊讶的结果！是的训练集和测试集的结果都是100%，多么令人开心啊！然而，这个结果确是一个不真实的，因为数据集中并没有噪声，即没有干扰样本。</p>
 <p>这在真实世界中是不可能的！</p>
 <p>下面我们为样本增加一些噪音（干扰数据），令 noise = 30</p>
 
@@ -13769,7 +13769,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -13777,10 +13777,10 @@ lr.intercept_: 6.439293542825908e-15
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># 1. 使用make_regression()函数生成一个样本数为1000，特征数为2的的数据集</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_regression</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_regression</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">38</span><span class="p">,</span> <span class="n">noise</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="c1"># 2. 使用train_test_split()函数对数据集进行划分</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -13806,8 +13806,8 @@ lr.intercept_: 6.439293542825908e-15
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>训练集得分: 0.794
-测试集得分: 0.800
+<pre>训练集得分: 0.851
+测试集得分: 0.845
 </pre>
 </div>
 </div>
@@ -13825,20 +13825,20 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_diabetes</span>
 
 <span class="c1"># 1. 载入糖尿病情数据集</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_diabetes</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">()</span><span class="o">.</span><span class="n">target</span>
 
 <span class="c1"># 2. 使用train_test_split()函数对数据集进行划分</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -13889,37 +13889,16 @@ lr.intercept_: 6.439293542825908e-15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-&#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge-Regression&#65289;">3. &#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge Regression&#65289;<a class="anchor-link" href="#3.-&#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge-Regression&#65289;">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1-&#23725;&#22238;&#24402;&#30340;&#21407;&#29702;">3.1 &#23725;&#22238;&#24402;&#30340;&#21407;&#29702;<a class="anchor-link" href="#3.1-&#23725;&#22238;&#24402;&#30340;&#21407;&#29702;">&#182;</a></h3><p>岭回归也是一种线性模型，它是一种改良的最小二乘法。岭回归保留了所有的特征变量，但它通过L2约束实现减小特征变量的系数值，这使用特征变量对预测结果的影响变小，这种方法在一定程度上降低了过拟合问题（即训练误差和测试误差之间的差距变小）。岭回归的数学表达为：$argmin||X \theta - y||^2 + ||\Gamma \theta||^2$，其中 $\Gamma = \alpha I$。</p>
-<p>从上面的公式可以看到，在岭回归中，存在一个超参数alpha，该超参数可以用来控制减小特征变量系数的程度。</p>
+<h2 id="3.-&#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge-Regression&#65289;">3. &#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge Regression&#65289;<a class="anchor-link" href="#3.-&#20351;&#29992;L2&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#23725;&#22238;&#24402;&#65288;Ridge-Regression&#65289;">&#182;</a></h2><h3 id="3.1-&#23725;&#22238;&#24402;&#30340;&#21407;&#29702;">3.1 &#23725;&#22238;&#24402;&#30340;&#21407;&#29702;<a class="anchor-link" href="#3.1-&#23725;&#22238;&#24402;&#30340;&#21407;&#29702;">&#182;</a></h3><p>岭回归也是一种线性模型，它是一种改良的最小二乘法。岭回归保留了所有的特征变量，但它通过L2约束实现减小特征变量的系数值，这使用特征变量对预测结果的影响变小，这种方法在一定程度上降低了过拟合问题（即训练误差和测试误差之间的差距变小）。岭回归的数学表达为：$argmin||X \theta - y||^2 + ||\Gamma \theta||^2$，其中，$\Gamma = \alpha I$</p>
+<p>在岭回归中，存在一个超参数alpha，该超参数可以用来控制减小特征变量系数的程度。</p>
 <p>这种通过保留特征变量，只降低特征变量的系数值来避免过拟合的方法，我们称之为L2正则化。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.2-&#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;">3.2 &#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;<a class="anchor-link" href="#3.2-&#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.1-&#23725;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&#24773;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">3.2.1 &#23725;&#22238;&#24402;&#22312;"&#31958;&#23615;&#30149;&#24773;"&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;<a class="anchor-link" href="#3.2.1-&#23725;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&#24773;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">&#182;</a></h4>
+<h3 id="3.2-&#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;">3.2 &#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;<a class="anchor-link" href="#3.2-&#22522;&#20110;&#23725;&#22238;&#24402;&#30340;&#39044;&#27979;">&#182;</a></h3><h4 id="3.2.1-&#23725;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&#24773;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">3.2.1 &#23725;&#22238;&#24402;&#22312;"&#31958;&#23615;&#30149;&#24773;"&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;<a class="anchor-link" href="#3.2.1-&#23725;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&#24773;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -13976,7 +13955,7 @@ lr.intercept_: 6.439293542825908e-15
 <li>无论是训练集，还是测试集的预测结果，岭回归的结果都要差于线性回归。原因可能是样本数量较少</li>
 <li>训练集和测试集之间的误差非常小。这说明，岭回归所用的L2约束有效地降低了过拟合的问题。换句话说岭回归比线性模型具有更强的泛化能力。</li>
 </ol>
-<p><font color="red">**【知识点】**模型泛化: 泛化能力（generalization ability）是指机器学习算法对新鲜样本的适应能力。 [1]  学习的目的是学到隐含在数据背后的规律，对具有同一规律的学习集以外的数据，经过训练的网络也能给出合适的输出，该能力称为泛化能力。</font></p>
+<p><font color="red">**【知识点】**模型泛化: 泛化能力（generalization ability）是指机器学习算法对新鲜样本的适应能力。 学习的目的是学到隐含在数据背后的规律，对具有同一规律的学习集以外的数据，经过训练的网络也能给出合适的输出，该能力称为泛化能力。</font></p>
 
 </div>
 </div>
@@ -13990,7 +13969,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. 载入波士顿房价数据集</span>
@@ -14052,7 +14031,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -14111,7 +14090,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
@@ -14160,7 +14139,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
@@ -14207,9 +14186,9 @@ lr.intercept_: 6.439293542825908e-15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<ol>
 <li>alpha对coef_属性的影响</li>
-</ul>
+</ol>
 <p>较高的alpha值表示约束越强，coef_会变得越小；较小的alpha值表示约束越弱, coef_会变得越大; 当alpha = 0时，岭回归简化为线性模型。</p>
 
 </div>
@@ -14217,7 +14196,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -14257,8 +14236,6 @@ lr.intercept_: 6.439293542825908e-15
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;权重系数量级&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span> <span class="c1"># 绘制当前坐标轴上的水平线</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14268,6 +14245,19 @@ lr.intercept_: 6.439293542825908e-15
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.legend.Legend at 0x26ad6341f08&gt;</pre>
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -14298,7 +14288,7 @@ lr.intercept_: 6.439293542825908e-15
 <li>超参数 alpha = 0.1 时，特征系数继续增大，L2正则化的约束几乎失去作用</li>
 <li>超参数 alpha = 0 时，特征系数值和线性回归完全重合，L2正则化的约束也彻底失去作用</li>
 </ol>
-<p><font style="color:red; font-weight:bold;">【函数说明】[plt_legend](functions/plt_legend.ipynb)  [plt_plot](functions/plt_plot.ipynb)</font></p>
+<p><font style="color:red; font-weight:bold;">【函数说明】[plt.legend](functions/plt.legend.ipynb)  [plt.plot](functions/plt.plot.ipynb)</font></p>
 
 </div>
 </div>
@@ -14306,16 +14296,16 @@ lr.intercept_: 6.439293542825908e-15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<ol>
 <li>训练集大小对模型性能的影响</li>
-</ul>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -14352,7 +14342,6 @@ lr.intercept_: 6.439293542825908e-15
 <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">LinearRegression</span><span class="p">(),</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;best&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14362,6 +14351,19 @@ lr.intercept_: 6.439293542825908e-15
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.legend.Legend at 0x26ad20f3948&gt;</pre>
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -14402,36 +14404,15 @@ lr.intercept_: 6.439293542825908e-15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-&#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso-Regression&#65289;">4. &#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso Regression&#65289;<a class="anchor-link" href="#4.-&#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso-Regression&#65289;">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.1-&#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;">4.1 &#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;<a class="anchor-link" href="#4.1-&#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;">&#182;</a></h3><p>套索(Lasso)回归也会将系数限制在一个非常接近于0的范围，但是与岭回归所使用的L2正则化不同，套索回归使用L1正则化，它会使一部分特征系数等于0，也就是说一部分特征被彻底忽略。这种方法可以被理解成一种特征选择。与神经网络CNN的Dropout算法相似。套索回归的数学表达为：$argmin||X \theta - y||^2 + \alpha |\theta|$。</p>
+<h2 id="4.-&#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso-Regression&#65289;">4. &#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso Regression&#65289;<a class="anchor-link" href="#4.-&#20351;&#29992;L1&#27491;&#21017;&#21270;&#30340;&#32447;&#24615;&#27169;&#22411;&#8212;&#8212;&#22871;&#32034;&#22238;&#24402;&#65288;Lasso-Regression&#65289;">&#182;</a></h2><h3 id="4.1-&#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;">4.1 &#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;<a class="anchor-link" href="#4.1-&#22871;&#32034;&#22238;&#24402;&#30340;&#21407;&#29702;">&#182;</a></h3><p>套索(Lasso)回归也会将系数限制在一个非常接近于0的范围，但是与岭回归所使用的L2正则化不同，套索回归使用L1正则化，它会使一部分特征系数等于0，也就是说一部分特征被彻底忽略。这种方法可以被理解成一种特征选择。与神经网络CNN的Dropout算法相似。套索回归的数学表达为：$argmin||X \theta - y||^2 + \alpha |\theta|$</p>
 <p><em>（此处暂时忽略这种算法的优势，有兴趣的同学可以Baidu一下，特别是Dropout算法）</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.2-&#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;">4.2 &#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;<a class="anchor-link" href="#4.2-&#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.1-&#22871;&#32034;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">4.2.1 &#22871;&#32034;&#22238;&#24402;&#22312;"&#31958;&#23615;&#30149;"&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;<a class="anchor-link" href="#4.2.1-&#22871;&#32034;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">&#182;</a></h4>
+<h3 id="4.2-&#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;">4.2 &#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;<a class="anchor-link" href="#4.2-&#22522;&#20110;&#22871;&#32034;&#22238;&#24402;&#30340;&#39044;&#27979;">&#182;</a></h3><h4 id="4.2.1-&#22871;&#32034;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">4.2.1 &#22871;&#32034;&#22238;&#24402;&#22312;"&#31958;&#23615;&#30149;"&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;<a class="anchor-link" href="#4.2.1-&#22871;&#32034;&#22238;&#24402;&#22312;&quot;&#31958;&#23615;&#30149;&quot;&#25968;&#25454;&#38598;&#19978;&#30340;&#24212;&#29992;">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
@@ -14446,8 +14427,19 @@ lr.intercept_: 6.439293542825908e-15
 
 <span class="c1"># 2. 使用train_test_split()函数对数据集进行划分</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
 <span class="n">lasso</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="c1"># 4. 性能分析</span>
@@ -14506,7 +14498,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
@@ -14560,7 +14552,7 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. 使用线性回归模型计算权重 *w* 和 截距 *b* 的值，并给出回归模型的方程</span>
@@ -14624,10 +14616,11 @@ lr.intercept_: 6.439293542825908e-15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 0.导入数据集生成工具和拆分工具</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">Ridge</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">Lasso</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
@@ -14658,8 +14651,6 @@ lr.intercept_: 6.439293542825908e-15
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;权重系数序号&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;权重系数量级&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ridge01</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span> <span class="c1"># 绘制当前坐标轴上的水平线</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14669,6 +14660,19 @@ lr.intercept_: 6.439293542825908e-15
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.collections.LineCollection at 0x26ad1fdda08&gt;</pre>
+</div>
+
+</div>
 
 <div class="output_area">
 
