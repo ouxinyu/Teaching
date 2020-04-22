@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lecture05ChangeOfBasis</title>
+<title>Lecture05ChangeOfBasisAnswers</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#30697;&#38453;&#20056;&#21521;&#37327;&#30340;&#26032;&#35270;&#35282;&#65306;&#21464;&#25442;&#22522;&#24213;">&#30697;&#38453;&#20056;&#21521;&#37327;&#30340;&#26032;&#35270;&#35282;&#65306;&#21464;&#25442;&#22522;&#24213;<a class="anchor-link" href="#&#30697;&#38453;&#20056;&#21521;&#37327;&#30340;&#26032;&#35270;&#35282;&#65306;&#21464;&#25442;&#22522;&#24213;">&#182;</a></h1>
+<h1 id="&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#22522;&#24213;&#21464;&#25442;">&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#22522;&#24213;&#21464;&#25442;<a class="anchor-link" href="#&#35838;&#21518;&#20316;&#19994;&#31572;&#26696;&#65306;&#22522;&#24213;&#21464;&#25442;">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13094,13 +13094,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#26412;&#31456;&#35201;&#28857;">&#26412;&#31456;&#35201;&#28857;<a class="anchor-link" href="#&#26412;&#31456;&#35201;&#28857;">&#182;</a></h2><ol>
-<li>理解基底变化和坐标变换的原理</li>
-<li>学会从将标准基$[e_1, e_2]$下的坐标迁移到特定基$[u_1, u_2]$，并求转移矩阵</li>
-<li>学会从将特定基$[u_1, u_2]$下的坐标迁移到标准基$[e_1, e_2]$，并求转移矩阵</li>
-<li>学会从将特定基$[u_1, u_2]$下的坐标迁移到特定基$[v_1, v_2]$，并求转移矩阵</li>
-<li>重点掌握配合Python描述实现上述功能</li>
-</ol>
+<p><strong>1. 给定矩阵$M=\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+\end{bmatrix}$，分别求它的行空间形式和列空间形式。其中，向量组的系数以$a,b,c,d$进行表示。</strong></p>
 
 </div>
 </div>
@@ -13108,732 +13106,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>在前面的学习中，我们知道同一个向量在不同的基（坐标系）下有不同的表示（坐标），那么不同的基与不同的坐标之间又有怎么样的关系呢？其实，很多应用问题都可以通过从一个坐标系转换为另一个坐标系而得到简化。</p>
-<p>图一:
-<img src="http://ouxinyu.cn/Teaching/ComputerMath/Attachments/0501Kernel01.png" alt="Image"></p>
-<p>图二：
-<img src="http://ouxinyu.cn/Teaching/ComputerMath/Attachments/0502Kernel02.png" alt="Image"></p>
-<p>在一个向量空间中转换坐标和从一组基转为另外一组基本质上是相同的。本节中，我们讨论从一个坐标系转换为另一坐标系的问题，并证明它可以通过将给定向量 $x$ 乘以一个非奇异矩阵$S$来实现。乘积$y=Sx$为新坐标系下的坐标向量。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-&#34892;&#31354;&#38388;&#21644;&#21015;&#31354;&#38388;">1. &#34892;&#31354;&#38388;&#21644;&#21015;&#31354;&#38388;<a class="anchor-link" href="#1.-&#34892;&#31354;&#38388;&#21644;&#21015;&#31354;&#38388;">&#182;</a></h2><p>如果<strong><em>A</em></strong>是一个$m \times n$的矩阵，<strong><em>A</em></strong>的每一行为一个实的n元组，于是可以将其看成是 $\bf{R}^{1 \times n}$ 中的一个向量。对应于<strong><em>A</em></strong>的$m$个行的向量称为<strong><em>A</em></strong>的行向量（row vector），记作：</p>
-<p>$A=\begin{bmatrix} a_{row_1} \\ a_{row_2} \\ ... \\ a_{row_m} \end{bmatrix}$</p>
-<p>类似地，<strong><em>A</em></strong>的每一列可以看成是$\bf{R}^m$中的一个向量，且称这$n$个向量为<strong><em>A</em></strong>的列向量(column vector)，记作：</p>
-<p>$A = [a_{col_1}, a_{col_2}, ..., a_{col_n}]$</p>
-<p><strong>【定义】</strong> 如果<strong><em>A</em></strong>为一个$m \times n$的矩阵，由<strong><em>A</em></strong>的行向量张成的$\bf{R}^{1 \times n}$的子空间称为<strong><em>A</em></strong>的<strong>行空间</strong>(row space)。由<strong><em>A</em></strong>的各列张成的$\bf{R}^m$的子空间称为<strong><em>A</em></strong>的<strong>列空间</strong>(column space)。</p>
-<p><strong>【例5.1】</strong> 令$A=\begin{bmatrix} 1 &amp; 0 &amp; 0  \\ 0 &amp; 1 &amp; 0 \end{bmatrix}$，则:</p>
-<ul>
-<li><p>A的行空间有如下形式的三元组：
-$\alpha(1,0,0)+\beta(0,1,0)=(\alpha,\beta,0)$</p>
-</li>
-<li><p>A的列空间是所有如下形式的向量：$\alpha \begin{bmatrix} 1 \\ 0 \end{bmatrix} + \beta \begin{bmatrix} 0 \\ 1 \end{bmatrix} + \gamma \begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$</p>
-</li>
-</ul>
-<p>因此，<strong><em>A</em></strong>的行空间为一个$\bf{R}^{1 \times 3}$的二维子空间，且A的列空间为$\bf{R}^2$。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-&#30697;&#38453;&#20056;&#27861;&#30340;&#26032;&#35270;&#35282;">2. &#30697;&#38453;&#20056;&#27861;&#30340;&#26032;&#35270;&#35282;<a class="anchor-link" href="#2.-&#30697;&#38453;&#20056;&#27861;&#30340;&#26032;&#35270;&#35282;">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.1-&#22522;&#20110;&#34892;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;">2.1 &#22522;&#20110;&#34892;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;<a class="anchor-link" href="#2.1-&#22522;&#20110;&#34892;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;">&#182;</a></h3><p>下面我们来回顾一下矩阵和向量相乘的运算法则。假设存在一个$m$维向量$x$和一个$m \times n$的矩阵$A$，它们相乘的规则如下：</p>
-<p>$Ax=\begin{bmatrix} 
-    a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ 
-    a_{21} &amp; a_{22} &amp; ... &amp; a_{2n} \\ 
-    ... &amp; ... &amp; ... &amp; ... \\ 
-    a_{m1} &amp; a_{m2} &amp; ... &amp; a_{mn} \\
-\end{bmatrix}
-\begin{bmatrix} 
-    x_1 \\ 
-    x_2 \\ 
-    ... \\ 
-    x_n \\
-\end{bmatrix}
-=\begin{bmatrix} 
-    a_{11} x_{1} + a_{12} x_{2} + ... + a_{1n} x_{n} \\ 
-    a_{21} x_{1} + a_{22} x_{2} + ... + a_{2n} x_{n} \\ 
-    ...  \\ 
-    a_{m1} x_{1} + a_{m2} x_{2} + ... + a_{mn} x_{n} \\
-\end{bmatrix}$</p>
-<p>不难发现，矩阵$A$第$i$行的行向量的各成分和列向量$x$各成分分别相乘后再相加，得到的就是结果向量$Ax$中的第$i$个成分。这个计算方法就是多次应用了向量点乘的定义式，即：</p>
-<p>$Ax=\begin{bmatrix} 
-    row_{1} \\ 
-    row_{2} \\ 
-    ...  \\ 
-    row_{m} \\
-\end{bmatrix}x
-=\begin{bmatrix} 
-    row_{1} · x \\ 
-    row_{2} · x \\ 
-    ...  \\ 
-    row_{m} · x \\
-\end{bmatrix}$</p>
-<p>对于矩阵和向量的乘法运算，以上就是按行计算的展示，这也是常规的计算规则。但看上去只是一种规范性的计算法则，并没有太多的几何意义和内涵。下面我们给出另外一种从列的视角来解释的矩阵乘法。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2-&#22522;&#20110;&#21015;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;">2.2 &#22522;&#20110;&#21015;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;<a class="anchor-link" href="#2.2-&#22522;&#20110;&#21015;&#35270;&#35282;&#30697;&#38453;&#20056;&#27861;">&#182;</a></h3><p>我们依然以一个$m$维向量$x$和一个$m \times n$的矩阵$A$的乘法为例：</p>
-<p>$Ax=\begin{bmatrix} 
-a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ 
-a_{21} &amp; a_{22} &amp; ... &amp; a_{2n} \\ 
-... &amp; ... &amp; ... &amp; ... \\ 
-a_{m1} &amp; a_{m2} &amp; ... &amp; a_{mn} \end{bmatrix}
-\begin{bmatrix} x_1 \\ x_2 \\ ... \\ x_n \end{bmatrix}
-=x_1 \begin{bmatrix} a_{11} \\ a_{21} \\ ... \\ a_{m1} \end{bmatrix}
-+x_2 \begin{bmatrix} a_{12} \\ a_{22} \\ ... \\ a_{m2} \end{bmatrix}
-+... 
-+x_n \begin{bmatrix} a_{1n} \\ a_{2n} \\ ... \\ a_{mn} \end{bmatrix}
-=\begin{bmatrix} 
-a_{11} x_{1} + a_{12} x_{2} + ... + a_{1n} x_{n} \\ 
-a_{21} x_{1} + a_{22} x_{2} + ... + a_{2n} x_{n} \\ 
-... \\ 
-a_{m1} x_{1} + a_{m2} x_{2} + ... + a_{mn} x_{n}\end{bmatrix}$</p>
-<p>基于这样的拆解方式，依然可以得到正确的结果。不难发现的是，矩阵$A$第$j$列的列向量的各成分和列向量$x$对应的第$j$行相乘，得到的是结果向量$Ax$中的第$j$个成分。$Ax$相乘的运算就简化成了两个向量的点乘，即：</p>
-<p>$Ax=[Col_1, Col_2,...,Col_n] \begin{bmatrix} x_1 \\ x_2 \\ ... \\ x_n \end{bmatrix}$。</p>
-<p>这个结果很有趣，从列的角度来看，矩阵$A$与向量$x$的乘法，实质上对矩阵A的各个列向量进行线性组合的过程，每个列向量的系数就是向量$x$的各个对应成分。</p>
-<p><strong>【例5.2】</strong> 给出矩阵乘法</p>
-<p>$Ax=\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}
-\begin{bmatrix} 3 \\ 5 \end{bmatrix}
-=3\begin{bmatrix} 1 \\ 3 \end{bmatrix}
-+5\begin{bmatrix} 2 \\ 4 \end{bmatrix}$</p>
-<p>通过乘法计算，最终所得到的结果向量是：位于矩阵第一列的列向量$\begin{bmatrix} 1 \\ 3 \end{bmatrix}$的3倍加上位于第二列的列向量的$\begin{bmatrix} 2 \\ 4 \end{bmatrix}$的5倍。</p>
-<p><strong>【小节】</strong></p>
-<p>综上所述，一个矩阵和一个向量相乘的过程可以理解为对位于原矩阵各列的列向量重新进行线性组合的过程，而在线性组合的运算过程中，结果中的各个系数就是乘法运算的列向量中所对应的各个成分。这是一种从列的角度去看待矩阵与向量乘法的新视角。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-&#22522;&#20110;&#22522;&#24213;&#21464;&#25442;&#30340;&#22352;&#26631;&#21464;&#25442;">3. &#22522;&#20110;&#22522;&#24213;&#21464;&#25442;&#30340;&#22352;&#26631;&#21464;&#25442;<a class="anchor-link" href="#3.-&#22522;&#20110;&#22522;&#24213;&#21464;&#25442;&#30340;&#22352;&#26631;&#21464;&#25442;">&#182;</a></h2><p>在进行<code>坐标变换</code>的时候，我们有时候也会将其解释为<code>基底变换</code>，事实上<code>坐标变换</code>和<code>基底变换</code>在某种程度上可以理解为是一回事。与此同时，我们也可以说这是<strong>向量</strong>的<code>基底变换</code>，因为在空间中，我们通常将<code>向量</code>称成为<code>坐标</code>。所不同的是，基底变换描述的是坐标的参照体系的变换，而坐标变换描述的是一个向量在不同坐标系下的具体的值。</p>
-<p>简单的说，我们给定一个基于特定基底$U$的坐标$x$，其坐标变换的实质就是将该坐标$x$从基底$U$迁移到基底$V$，得到新的坐标。</p>
-<p>此处我们可以将坐标变换表示为：$[x]_U -&gt; [x]_V$.</p>
-<p>下面我们再来看看在坐标的定义。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1-&#22522;&#20110;&#22522;&#24213;&#30340;&#22352;&#26631;">3.1 &#22522;&#20110;&#22522;&#24213;&#30340;&#22352;&#26631;<a class="anchor-link" href="#3.1-&#22522;&#20110;&#22522;&#24213;&#30340;&#22352;&#26631;">&#182;</a></h3><p><strong>【定义】</strong> 假设二维空间$R^2$存在标准基为${e_1, e_2}$，任何$R^2$中的向量$x$都可以表示为线性组合:</p>
-<p>$x=x_1 e_1 + x_2 e_2$</p>
-<p>标量$x_1$和$x_2$可以看成是$x$在标准基下的<strong>坐标</strong>。</p>
-<p>事实上，对任意$R^2$的基$\{y, z\}$，给定向量$x$可唯一地表示为线性组合: $x=\alpha y + \beta z$，标量$\alpha, \beta$为$x$相应于基$\{y, z\}$的坐标。对基中的元素进行排序，使得$y$为第一个基向量，$z$为第二个基向量，并将这个有序的基记为 $[y, z]$。然后称向量$(\alpha, \beta)^T$为$x$对应于$[y,z]$的坐标向量。注意，如果交换基向量的顺序为$[z, y]$，则必须同时交换坐标向量。$x$对应于$[z, y]$的坐标向量为$(\beta, \alpha)^T$。当使用下标基时，例如$\{u_1, u_2\}$，下标就表示基向量的一个顺序。</p>
-<p><strong>【例5.3】</strong> 令$y=(2,1)^T，z=(1,4)^T$。向量y和z线性无关，且构成$R^2$的一组基。向量$x=(7,7)^T$可写为线性组合: x=3y+z。</p>
-<p>因此，x相应于[y, z]的坐标向量是$(3,1)^T$。从几何上看，坐标向量表示如何从原点移动到点(7,7)，即首先沿着y方向，然后沿着z方向。而如果把z看作是第一个基向量，y是第二个基向量，则：x=z+3y。</p>
-<p><img src="http://ouxinyu.cn/Teaching/ComputerMath/Attachments/0503Coordinates.png" alt="Image"></p>
-<p>x对应于有序基[z, y]的坐标向量为$(1,3)^T$。从几何上看，这个向量告诉我们如何从原点移动到点(7,7)，即首先沿着z方向，然后沿着y方向移动。</p>
-<p><strong>【例5.4】人口迁移</strong> 假设一个大城市的总人口保持相对固定；然而，每年6%的人从城市搬到郊区，2%的的人从郊区搬到城市。如果初始时，30%的人生活在城市，70%的人生活中郊区，那么10年后这些比例有什么变化？30年后呢？50年后呢？长时过程意味着什么？</p>
-<p>解：人口的变化可由矩阵乘法确定。若令：$A=\begin{bmatrix} 0.94 &amp; 0.02 \\ 0.06 &amp; 0.98 \end{bmatrix}$及$x=\begin{bmatrix} 0.30 \\ 0.70 \end{bmatrix}$。其中0.94表示一年后仍然生活在城市的人口比例，0.02表示从郊区搬到城市的人口比例；0.06表示从城市搬到郊区的人口比例，0.98表示仍然生活在郊区的人口比例。</p>
-<p>则，1年后，在城市和郊区生活的人口比例可由$x_1 = A x_0$ 求得。2年后的比例可由$x_2 = Ax_1 = A^2 x_0$求得。一般地，n年后的比例可由$x_n = A^n x_0$给出。如果计算n=10，30和50时的百分比，并将它们舍入到最接近的百分比，我们有：</p>
-<p>$x_{10}=A^{10} x_0 = \begin{bmatrix} 0.272 \\ 0.728 \end{bmatrix}, 
-x_{30}=A^{30} x_0 = \begin{bmatrix} 0.254 \\ 0.745 \end{bmatrix}, 
-x_{50}=A^{50} x_0 = \begin{bmatrix} 0.250 \\ 0.749 \end{bmatrix}$</p>
-<p>上式中矩阵乘法的部分，我们可以使用Python来编程实现：</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1"># np.set_printoptions(formatter={&#39;float&#39;: &#39;{: 0.2f}&#39;.format})</span>
-
-<span class="n">A0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.94</span><span class="p">,</span><span class="mf">0.02</span><span class="p">],[</span><span class="mf">0.06</span><span class="p">,</span><span class="mf">0.98</span><span class="p">]])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.7</span><span class="p">]])</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">A0</span>
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># year的取值范围是[0:49],其中0为第一年，49为第50年</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>    
-    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A0</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">year</span><span class="o">+</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:2d}</span><span class="s1">年后的居住比例为：</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> 1年后的居住比例为：[[0.296 0.704]]
- 2年后的居住比例为：[[0.29232 0.70768]]
-10年后的居住比例为：[[0.27171942 0.72828058]]
-30年后的居住比例为：[[0.25409831 0.74590169]]
-50年后的居住比例为：[[0.25077332 0.74922668]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<p>当n持续增加时，向量序列$x_n = A^n x_0$将收敛到极限 $x=[0.25,0.75]^T$。向量x的极限称为该过程的稳态向量（steady-state vector）。有兴趣的同学可以查询有关<strong>马尔可夫过程(Markov process)</strong>的相关文献。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.2-&#20174;&#30697;&#38453;&#20056;&#27861;&#30340;&#35282;&#24230;&#29702;&#35299;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.2 &#20174;<strong>&#30697;&#38453;&#20056;&#27861;</strong>&#30340;&#35282;&#24230;&#29702;&#35299;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.2-&#20174;&#30697;&#38453;&#20056;&#27861;&#30340;&#35282;&#24230;&#29702;&#35299;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.1-&#22522;&#20110;&#20108;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.2.1 &#22522;&#20110;&#20108;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.2.1-&#22522;&#20110;&#20108;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h4><p>前面我们说过向量的坐标必须依托于基底的选取，也就是说，向量的坐标在明确了基底的前提下才有实际意义。而对于二维列向量，我们说它对应到空间中的坐标是(x,y)，其实就是基于默认基底：$(\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix})$. 那么二维基向量的完整表达就应该是：
-$\begin{bmatrix} x \\ y \end{bmatrix}
-=x \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-+y \begin{bmatrix} 0 \\ 1 \end{bmatrix}$。</p>
-<p>下面我们就利用这个概念来讲矩阵与向量的乘法运算进行展开，进一步理解坐标变换的过程。</p>
-<p>给定一个矩阵$A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}$，若存在向量$u=\begin{bmatrix} x \\ y \end{bmatrix}$，则它们之间的乘法关系可以表示为：</p>
-<p>$Au = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
-=\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} (x \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-+y \begin{bmatrix} 0 \\ 1 \end{bmatrix})
-=x \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-+y \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-=x \begin{bmatrix} a \\ c \end{bmatrix} + y \begin{bmatrix} b \\ d \end{bmatrix}$</p>
-<p>更连贯地表达，我们可以认为在矩阵$\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}$的作用下，向量$u$将从标准基迁移到一个新的基下，即完成了坐标变换。</p>
-<p>$x \begin{bmatrix} 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 1 \end{bmatrix}$
-=&gt; $x \begin{bmatrix} a \\ c \end{bmatrix} + y \begin{bmatrix} b \\ d \end{bmatrix}$</p>
-<p>具体而言，通过乘法运算，矩阵把向量的基底进行了变换，旧的基底$(\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix})$变成了新的基底$(\begin{bmatrix} a \\ c \end{bmatrix}, \begin{bmatrix} b \\ d \end{bmatrix})$。映射前由旧的基底分别乘以对应的坐标(x,y)来表示其空间位置；而映射后，很自然地想到是由新的基底去乘以坐标(x,y)来表述坐标在新的基底下的空间位置：$x \begin{bmatrix} 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-=&gt; x \begin{bmatrix} a \\ c \end{bmatrix} + y \begin{bmatrix} b \\ d \end{bmatrix}
-=\begin{bmatrix} ax+by \\ cx+dy \end{bmatrix}$。该映射关系可以用下图来表示：</p>
-<p><img src="http://ouxinyu.cn/Teaching/ComputerMath/Attachments/0505CoordinatesChange.png" alt="Image"></p>
-<p><strong>【结果分析】</strong></p>
-<p>综合矩阵的乘法公式不难发现：</p>
-<ol>
-<li><p>矩阵A的第一列$\begin{bmatrix} a \\ c \end{bmatrix}$就是原始的$x$方向上的标准基$\begin{bmatrix} 1 \\ 0 \end{bmatrix}$变换所得到的目标位置（基于新基向量的坐标），而第二列$\begin{bmatrix} b \\ d \end{bmatrix}$就是$y$方向上的标准基$\begin{bmatrix} 0 \\ 1 \end{bmatrix}$映射后的目标位置（基于新基向量的坐标）。</p>
-</li>
-<li><p>映射后得到的新向量，如果以向量$(\begin{bmatrix} a \\ c \end{bmatrix}, \begin{bmatrix} b \\ d \end{bmatrix})$为基底那么其坐标仍然是(x,y)；如果以标准基$(\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix})$为基底，那么其坐标就变为$(ax+by, cx+dy)$。</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.2-&#22522;&#20110;&#19977;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.2.2 &#22522;&#20110;&#19977;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.2.2-&#22522;&#20110;&#19977;&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h4><p>下面我们再研讨一下三阶方阵和三维列向量相乘的例子，其运算规则也满足二阶变换的原理。</p>
-<p>$Au= \begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix}
-=\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{bmatrix} (x \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + z \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix})
-=x \begin{bmatrix} a \\ d \\ g \end{bmatrix}
-+y \begin{bmatrix} b \\ e \\ h \end{bmatrix}
-+z \begin{bmatrix} c \\ f \\ i \end{bmatrix}$</p>
-<p><strong>【结果分析】</strong></p>
-<p>与二阶方阵相相似，</p>
-<ol>
-<li><p>三阶方阵将三维列向量的基底做了映射转换，方阵的第一列$\begin{bmatrix} a \\ d \\ g \end{bmatrix}$是原基向量$\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$映射后的目标位置（新目标向量），方阵的第二列$\begin{bmatrix} b \\ e \\ h \end{bmatrix}$是基向量$\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$映射后的目标位置（新的基向量），而方阵的第三列$\begin{bmatrix} c \\ f \\ i \end{bmatrix}$则是原始向量$\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$映射后的目标位置（新的基向量）。</p>
-</li>
-<li><p>映射后的目标向量如果在新的基底$(\begin{bmatrix} a \\ d \\ g \end{bmatrix}, \begin{bmatrix} b \\ e \\ h \end{bmatrix}, \begin{bmatrix} c \\ f \\ i \end{bmatrix})$，其坐标仍然是$(x,y,z)$。如果回到原始基底$(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix})$下来看，将新的基底$(\begin{bmatrix} a \\ d \\ g \end{bmatrix}, \begin{bmatrix} b \\ e \\ h \end{bmatrix}, \begin{bmatrix} c \\ f \\ i \end{bmatrix})$和其所对应的坐标$(x,y,z)$相结合，就能得到默认原始基底的坐标值，具体表示为:$\begin{bmatrix} ax+by+cz \\ dx+ey+fz \\ gx+hy+iz \end{bmatrix}$.</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.3-&#22522;&#20110;m&#215;n&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.2.3 &#22522;&#20110;m&#215;n&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.2.3-&#22522;&#20110;m&#215;n&#38454;&#26041;&#38453;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h4><p>下面讨论更一般的例子，给定一个矩阵$A_{m×n} (m \neq n)$和向量一个$n$维列向量$x$。我们按照上面的步骤计算矩阵$A=\begin{bmatrix} a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; ... &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \dots \\ a_{m1} &amp; a_{m2} &amp; ... &amp; a_{mn} \end{bmatrix}$和向量$x=\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$的乘法，可以得到：</p>
-<p>$Ax = \begin{bmatrix} a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; ... &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \dots \\ a_{m1} &amp; a_{m2} &amp; ... &amp; a_{mn} \end{bmatrix}
-\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}
-=x_1 \begin{bmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{bmatrix}
-+x_2 \begin{bmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{bmatrix}
-+...
-+x_n \begin{bmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{bmatrix}$.</p>
-<p>在$m×n$形状大小的矩阵$A$的作用下，原始的$n$维向量$\begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}$被映射了新的$m$维度基向量$\begin{bmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{bmatrix}$，原始的$n$维向量$\begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}$被映射成了新的$m$维基向量$\begin{bmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{bmatrix}$。原始的$n$维基向量$\begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}$被映射成了新的m维基向量$\begin{bmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{bmatrix}$.</p>
-<p><strong>【结果分析】</strong></p>
-<p>从推导结果可以发现，映射前后的坐标维度发生了变换，原始的$n$维列向量变成了$n$个$m$维列向量线性组合的形式，其最终的运算结果是一个$m$维的列向量。由此，我们不难得出结论：映射后的向量维数和原始向量维数的关系取决于<code>映射矩阵</code>的维数$m$和$n$的关系：</p>
-<ul>
-<li>$m&gt;n$，映射后的目标向量维数大于原始向量的维数。但$m&gt;n$时，矩阵A中的$n$个列向量不足以表达$m$维空间中的所有向量。因此，这$n$个向量无法成为$m$维空间的基底。</li>
-<li>$m&lt;n$，目标向量的维数小于原始向量的维数，则$n$个向量中，一定存在线性相关的向量，因此它也无法构成基底。</li>
-<li>$m=n$，方阵，目标向量维数与原始向量一致。此时，如果这$n$个向量线性无关，则它们就能够构建一组新的基底。</li>
-</ul>
-<p>事实上，如果映射前后向量的维度发生了变换，也并不意味着坐标无法进行变换。在这种情况，坐标将从一个空间转换到了另外一个空间，而这两个空间具有完全不同的空间系统，因此基底的维数也可能产生不同。即转换前后的空间可能会具有不同的维度和不同的阶数，在实际应用中，这种空间转换同样具有非常重要的意义和用处。例如，一个自然场景的图片，从RGB颜色空间（红绿蓝），转换为CMYK颜色空间（青、洋红（品红）、黄、黑）。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.3-&#20174;&#26631;&#20934;&#22522;&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.3 &#20174;<strong>&#26631;&#20934;&#22522;</strong>&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.3-&#20174;&#26631;&#20934;&#22522;&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h3><p>一旦决定使用一组新的基，就需要寻找在这组基下的坐标。例如，假设我们希望用一组不同的基代替$R^2$中的标准基$[e_1, e_2]$，不妨设</p>
-<p>$u_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}, 
-u_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$</p>
-<p>事实上，我们希望做的是在两个坐标系间进行转换。考虑下面<strong>两个问题</strong>：</p>
-<blockquote><ol>
-<li><p>给定一个向量$x=(x_1, x_2)^T$，求它在$u_1$和$u_2$下的坐标。</p>
-</li>
-<li><p>给定一个向量$c_1 u_1 + c_2 u_2$，求它在$e_1, e_2$下的坐标。</p>
-</li>
-</ol>
-</blockquote>
-<p>下面，我们先求解<strong>任务2</strong>，因为它相对简单。为了将基$[u_1, u_2]$转换为标准基$[e_1, e_2]$，我们必须将原来的基元素$u_1$和$u_2$表示为新的基元素$e_1$和$e_2$。</p>
-<p>$u_1 = 3e_1 + 2e_2$</p>
-<p>$u_2 = e_1 + e_2$</p>
-<p>由此得到：</p>
-<p>$c_1 u_1 + c_2 u_2 \\
-= (3 c_1 e_1 + 2 c_1 e_2) + (c_2 e_1 + c_2 e_2) \\
-= (3 c_1 + c_2) e_1 + (2 c_1 + c2) e_2$</p>
-<p>因此$c_1 u_1 + c_2 u_2$相应于$[e_1, e_2]$的坐标向量为：</p>
-<p>$x = \begin{bmatrix} 3 c_1 + c_2 \\ 2 c_1 + c2 \end{bmatrix}
-= \begin{bmatrix} 3 &amp; 1 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}$</p>
-<p>如果令：</p>
-<p>$U = (u_1, u_2) =  \begin{bmatrix} 3 &amp; 1 \\ 2 &amp; 1 \end{bmatrix}$</p>
-<p>则给定任何相应于$[u_1, u_2]$的坐标向量$c$，求相应于$[e_1, e_2]$的坐标向量$x$，我们只需要用$U$乘以$c$，就可以得到<code>转移公式</code>：</p>
-<p>$x = Uc$.</p>
-<p>此时，称$U$为有序基$[u_1, u_2]$到基$[e_1, e_2]$的<strong>转移矩阵(transition matrix)</strong>.</p>
-<p>为了求解<strong>任务1</strong>，我们需要求从$[e_1, e_2]$到$[u_1, u_2]$的转移矩阵。<strong>任务1</strong>中的矩阵$U$是非奇异的，因此它的列向量$u_1$和$u_2$线性无关。由上面的<code>转移公式</code>可以得到</p>
-<p>$c = U^{-1} x$</p>
-<p>因此，给定向量 $x = (x_1, x_2)^T = x_1 e_1 + x_2 e_2$</p>
-<p>我们只需要乘以 $U^{-1}$即可求出在$[u_1, u_2]$下的坐标向量。其中，$U^{-1}$为从$[e_1, e_2]$到$[u_1, u_2]$的转移矩阵。</p>
-<blockquote><p><strong>逆矩阵的求解方法</strong>：假设存在矩阵A，我们可以构造一个新的矩阵 $B = [A I]$，然后对B进行初等行变换，目标是将A转换为单位矩阵I。当新的矩阵产生的时候，I的伴随矩阵就是A的逆矩阵$A^{-1}$。即，$C = [I A^{-1}]$.</p>
-</blockquote>
-<p><strong>【例5.5】</strong> 令 $u_1 = (3,2)^T, u_2 = (1,1)^T$及$x=(7,4)^T$。求$x$相应于$u_1$和$u_2$的坐标向量。</p>
-<p>解：根据前面的思路，从$[e_1, e_2]$到$[u_1, u_2]$的转移矩阵为$U$的逆矩阵，其中: $U = (u_1, u_2) =  \begin{bmatrix} 3 &amp; 2 \\ 1 &amp; 1 \end{bmatrix}$.</p>
-<p>因此,</p>
-<p>$c= U^{-1} x 
-= \begin{bmatrix} 1 &amp; -1 \\ -2 &amp; 3 \end{bmatrix} 
-\begin{bmatrix} 7 \\ 4 \end{bmatrix}
-= \begin{bmatrix} 3 \\ -2 \end{bmatrix}$</p>
-<p>即$c$为要求的坐标向量，且 $x=3u_1-2u_2$。</p>
-<p>上式中，我们可以使用Python来求解转移矩阵$U$的逆矩阵$U^{-1}$和矩阵与向量之间的乘法，表达为:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">],[</span><span class="mi">4</span><span class="p">]])</span>
-
-<span class="n">U1</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U的逆矩阵为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">U1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;新坐标c为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>U的逆矩阵为: 
- [[ 1. -1.]
- [-2.  3.]]
-新坐标c为: 
- [[ 3.]
- [-2.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 求矩阵的逆矩阵更标准的是使用matrix类型.I方法，具体如下：</span>
-
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> <span class="c1"># 将numpy数组转换为matrix类型</span>
-<span class="n">U2</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">I</span> <span class="c1"># 使用matrix.I属性获得矩阵的逆矩阵</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">U2</span><span class="p">)</span>
-
-<span class="c1">#下面使用numpy数组的inv()方法求数组的伪逆数组，该方法也被称为广义逆矩阵。</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="n">U1</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 1. -1.]
- [-2.  3.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【例5.6】</strong> 令 $b_1 = (1, -1)^T, b_2 = (-2,3)^T$。求从$[e_1, e_2]$到$[b_1, b_2]$的转移矩阵，并确定$x=(1,2)^T$相应$[b_1, b_2]$的坐标向量。</p>
-<p>解：从$[e_1, e_2]$到$[b_1, b_2]$的转移矩阵为：</p>
-<p>$B = (b_1, b_2) =  \begin{bmatrix} 1 &amp; -2 \\ -1 &amp; 3 \end{bmatrix}$</p>
-<p>由此，从$[b_1, b_2]$到$[e_1, e_2]$的转移矩阵为：</p>
-<p>$B^{-1} = \begin{bmatrix} 3 &amp; 2 \\ 1 &amp; 1 \end{bmatrix}$</p>
-<p>向量$x$相应于$[b_1, b_2]$的坐标向量为：</p>
-<p>$c= B^{-1} x 
-= \begin{bmatrix} 3 &amp; 2 \\ 1 &amp; 1 \end{bmatrix} 
-\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-= \begin{bmatrix} 7 \\ 3 \end{bmatrix}$</p>
-<p>于是有：$x=7 b_1 + 3 b_2$。</p>
-<p>与<strong>【例5.5】</strong>相似，求逆矩阵和矩阵乘法的操作，我们同样可以使用Python来实现。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
-
-<span class="n">B1</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B的逆矩阵为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">B1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;新坐标c为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>B的逆矩阵为: 
- [[3. 2.]
- [1. 1.]]
-新坐标c为: 
- [[7.]
- [3.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.4-&#20174;&#20219;&#24847;&#22522;&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.4 &#20174;<strong>&#20219;&#24847;&#22522;</strong>&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.4-&#20174;&#20219;&#24847;&#22522;&#24320;&#22987;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h3><p>下面我们讨论一下从一组非标准基$[u_1, u_2]$到另一组非标准基$[v_1, v_2]$的坐标变换问题。假设对给定的向量$x$，它相应于$[v_1, v_2]$的坐标为：$x=c_1 v_1 + c_2 v_2$。</p>
-<p>现在，我们希望将$x$表示为和基$[u_1, u_2]$对应的坐标$d_1 u_1 + d_2 u_2$。即，求标量$d_1, d_2$，使得：</p>
-<p>$c_1 v_1 + c_2 v_2 = d_1 u_1 + d_2 u_2$。</p>
-<p>若令$V=(v_1, v_2)$，且$U=(u_1, u_2)$，则上面的方程可以写成矩阵形式：$Vc = Ud$，由此可以得到：</p>
-<p>$d=U^{-1} V c$。</p>
-<p>因此，给定$R^2$中的向量$x$及其对应的有序基$[v_1, v_2]$的坐标向量$c$，要求$x$相应于新基$[u_1, u_2]$的坐标向量，只需将$c$乘以$V$到$U$的转移矩阵$S=U^{-1} V$</p>
-<p><strong>【例5.7】</strong> 求从$[v_1, v_2]$到$[u_1, u_2]$的转移矩阵，其中</p>
-<p>$v_1 = \begin{bmatrix} 5 \\ 2 \end{bmatrix},
-v_2 = \begin{bmatrix} 7 \\ 3 \end{bmatrix}   及   
-u_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix},
-u_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$</p>
-<p>解: 从$[v_1, v_2]$到$[u_1, u_2]$的转移矩阵为：</p>
-<p>$ S=U^{-1} V = \begin{bmatrix} 3 &amp; 2 \\ 1 &amp; -1 \end{bmatrix}^{-1}
-\begin{bmatrix} 5 &amp; 7 \\ 2 &amp; 3 \end{bmatrix}
-=\begin{bmatrix} 3 &amp; 4 \\ -4 &amp; -5 \end{bmatrix}$</p>
-<p>相似地，矩阵$U$的转移矩阵$U^{-1}$和矩阵乘法，也可以使用Python来完成。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-
-<span class="n">U1</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U的逆矩阵为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">U1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;转移矩阵为: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>U的逆矩阵为: 
- [[ 1. -1.]
- [-2.  3.]]
-转移矩阵为: 
- [[ 3.  4.]
- [-4. -5.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【结果分析】</strong></p>
-<p>从$[v_1, v_2]$到$[u_1, u_2]$的转换可以看成是一个两步的过程。首先从$[v_1, v_2]$转换为标准基$[e_1, e_2]$，然后再从标准基转换为$[u_1, u_2]$。给定向量空间$R^2$中的向量$x$，若$c$为$x$相应于$[v_1, v_2]$的坐标向量，且$d$为$x$相应于$[u_1, u_2]$的坐标向量，则：</p>
-<p>$c_1 v_1 + c_2 v_2 = x_1 e_1 + x_2 e_2  = d_1 u_1 + d_2 u_2$</p>
-<p>因为V是从$[v_1, v_2]$到$[e_1, e_2]$的转移矩阵，且$U^{-1}$是从$[e_1, e_2]$到$[u_1, u_2]$的转移矩阵，由此得到：</p>
-<p>$Vc=x$ 及 $U^{-1}x = d$</p>
-<p>于是</p>
-<p>$U^{-1}Vc = U^{-1}x = d$</p>
-<p>如前所述，我们得到了从$[v_1, v_2]$到$[u_1, u_2]$的转移矩阵为$S=U^{-1} V$。下面给出一个形象化的图示：</p>
-<p><img src="http://ouxinyu.cn/Teaching/ComputerMath/Attachments/0504BasisChange.png" alt="Image"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.5-&#19968;&#33324;&#21521;&#37327;&#31354;&#38388;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">3.5 &#19968;&#33324;&#21521;&#37327;&#31354;&#38388;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;<a class="anchor-link" href="#3.5-&#19968;&#33324;&#21521;&#37327;&#31354;&#38388;&#30340;&#22522;&#24213;&#21464;&#25442;&#65288;&#22352;&#26631;&#21464;&#25442;&#65289;">&#182;</a></h3><p>前面所述的所有结论都可以很容易地推广到任意有限维的向量空间中，我们从定义一个n维向量空间的坐标向量开始讨论。</p>
-<p><strong>【定义】</strong> 令V为一向量空间，且令$E=[v_1, v_2,...,v_n]$为V的一组<code>有序基</code>。若$v$为$V$中的任意元素，则$v$可写为：</p>
-<p>$v=c_1 v_1 + c_2 v_2 + ...+c_n v_n$</p>
-<p>其中$c_1, c_2, ..., c_n$为标量。因此可以将每一个向量$v$唯一对应于$R^n$中的一个向量$c=(c_1, c_2, ..., c_n)^T$。采用这种方式定义的向量$c$称为$v$相应于有序基$E$的坐标向量，并记为$[v]_E$，$c_i$称为$v$相对于$E$的坐标。</p>
-<p>前面的例子均假设坐标变换在$R^2$中进行，类似的方法也可应用于$R^n$。在$R^n$中，转移矩阵将为n×n矩阵。</p>
-<p><strong>【例5.8】</strong> 若$x=3 v_1 + 2 v_2 - v_3$ 及 $y = v_1 - 3v_2 + 2 v_3$，令：</p>
-<p>$E=[v_1, v_2, v_3]=[(1,1,1)^T, (2,3,2)^T, (1,5,4)^T]$</p>
-<p>$F=[u_1, u_2, u_3]=[(1,1,0)^T, (1,2,0)^T, (1,2,1)^T]$</p>
-<p>求：（1）从E到F的转移矩阵；（2）求$x, y$相应于有序基F的坐标。</p>
-<p>解：（1）E到F的转移矩阵为：</p>
-<p>$S=U^{-1}V=F^{-1}E \\
-=\begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}^{-1}
-\begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 1 &amp; 3 &amp; 5 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} \\
-=\begin{bmatrix} 2 &amp; -1 &amp; 0 \\ -1 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
-\begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 1 &amp; 3 &amp; 5 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} \\
-=\begin{bmatrix} 1 &amp; 1 &amp; -3 \\ -1 &amp; -1 &amp; 0 \\ 1 &amp; 2 &amp; 4 \end{bmatrix}$</p>
-<p>(2)坐标$x,y$相应于有序基$F$的坐标向量为：</p>
-<p>$[x]_F
-=\begin{bmatrix} 1 &amp; 1 &amp; -3 \\ -1 &amp; -1 &amp; 0 \\ 1 &amp; 2 &amp; 4 \end{bmatrix}
-\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix}
-=\begin{bmatrix} 8 \\ -5 \\ 3 \end{bmatrix}$</p>
-<p>$[y]_F
-=\begin{bmatrix} 1 &amp; 1 &amp; -3 \\ -1 &amp; -1 &amp; 0 \\ 1 &amp; 2 &amp; 4 \end{bmatrix}
-\begin{bmatrix} 1 \\ -3 \\ 2 \end{bmatrix}
-=\begin{bmatrix} -8 \\ 2 \\ 3 \end{bmatrix}$</p>
-<p><strong>【拓展验证】</strong>：验证基底变换前后的恒等性</p>
-<p>$8u_1 - 5u_2 + 3u_3 = 3v_1 + 2v_2 - v_3$</p>
-<p>$-8u_1 + 2u_2 + 3u_3 = v_1 -3v_2 + 2v_3$</p>
-<p>下面我们使用Python来描述：（1）求转移矩阵；（2）计算$x, y$相应于有序基F的坐标；（3）验证基底变换前后的恒等性。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 【例8】 若 𝑥=3𝑣1+2𝑣2−𝑣3  及  𝑦=𝑣1−3𝑣2+2𝑣3 ，令：</span>
-
-<span class="c1"># 𝐸=[𝑣1,𝑣2,𝑣3]=[(1,1,1)𝑇,(2,3,2)𝑇,(1,5,4)𝑇] </span>
-<span class="c1"># 𝐹=[𝑢1,𝑢2,𝑢3]=[(1,1,0)𝑇,(1,2,0)𝑇,(1,2,1)𝑇]</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span> 
-
-<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
-
-<span class="c1"># 1. 求转移矩阵S</span>
-<span class="c1"># S = U^-1 V</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="n">E</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
-
-<span class="c1"># 2. 计算x,y相应于有序基F的坐标</span>
-<span class="n">xF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">yF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xF=</span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="se">\n</span><span class="s1"> yF=</span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span> <span class="n">yF</span><span class="p">))</span>
-
-<span class="c1"># 3. 验证基底变换前后的恒等性</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x的比较结果=</span><span class="si">{}</span><span class="s1">，y的比较结果=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">xF</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">yF</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()))</span>
-
-<span class="c1"># x_left = np.dot(F, xF)</span>
-<span class="c1"># x_right =np.dot(E, x)</span>
-
-<span class="c1"># y_left = np.dot(F, yF)</span>
-<span class="c1"># y_right = np.dot(E, y)</span>
-
-<span class="c1"># com_x = (x_left == x_right).all()</span>
-<span class="c1"># com_y = (y_left == y_right).all()</span>
-
-<span class="c1"># print(&#39;x的比较结果={}，y的比较结果={}&#39;.format(com_x, com_y))</span>
-<span class="c1"># print(&#39;x_left=\n {}, \n x_right=\n {}&#39;.format(x_left, x_right))</span>
-<span class="c1"># print(&#39;y_left=\n {}, \n y_right=\n {}&#39;.format(y_left, y_right))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>S=
-[[ 1.  1. -3.]
- [-1. -1.  0.]
- [ 1.  2.  4.]]
-xF=
- [[ 8.]
- [-5.]
- [ 3.]], 
- yF=
- [[-8.]
- [ 2.]
- [ 3.]]
-x的比较结果=True，y的比较结果=True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.-&#26356;&#22810;&#22522;&#24213;&#21464;&#25442;&#30340;&#20363;&#23376;">4. &#26356;&#22810;&#22522;&#24213;&#21464;&#25442;&#30340;&#20363;&#23376;<a class="anchor-link" href="#4.-&#26356;&#22810;&#22522;&#24213;&#21464;&#25442;&#30340;&#20363;&#23376;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><ol>
-<li>从标准基$[e_1, e_2]$到特定基$[u_1, u_2]$的基底变换（坐标变换）</li>
-<li>从特定基$[u_1, u_2]$到标准基$[e_1, e_2]$的基底变换（坐标变换）</li>
-<li>从特定基$[u_1, u_2]$到特定基$[v_1, v_2]$的基底变换（坐标变换）</li>
-</ol>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.9】</strong> 对下列问题，求从基$[u_1, u_2]$到$[e_1, e_2]$对应的转移矩阵$U$。</p>
-<ol>
-<li><p>$u_1 = (1,1)^T, u_2 = (-1,1)^T$</p>
-</li>
-<li><p>$u_1 = (1,2)^T, u_2 = (2,5)^T$</p>
-</li>
-<li><p>$u_1 = (0,1)^T, u_2 = (1,0)^T$</p>
-</li>
-</ol>
-<blockquote><p>问题分析：从特定基$[u_1, u_2]$到标准基$[e_1, e_2]$的基底变换（坐标变换）。此处求转移矩阵，比较简单，只需要将$u$排列成列向量组即可得到特定基向标准基的转移矩阵。</p>
-</blockquote>
 <p>解：</p>
-<ol>
-<li>$U_1=[u_1,u_2]=\begin{bmatrix} 1 &amp; -1 \\ 1 &amp; 1 \end{bmatrix}$</li>
-<li>$U_2=[u_1,u_2]=\begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 5 \end{bmatrix}$</li>
-<li>$U_3=[u_1,u_2]=\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}$</li>
-</ol>
+<p>矩阵M的行空间形式为：$a(1,0,0,0)+b(0,1,0,0)+c(0,0,1,0)=(a,b,c,0)$</p>
+<p>矩阵M的列空间形式为：$a\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
++b\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
++c\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
++d\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+=\begin{bmatrix} a \\ b \\ c \end{bmatrix}$</p>
 
 </div>
 </div>
@@ -13841,94 +13120,48 @@ x的比较结果=True，y的比较结果=True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.10】</strong> 对下列问题，求从基$[e_1, e_2]$到$[u_1, u_2]$对应的转移矩阵S。</p>
-<ol>
-<li><p>$u_1 = (1,1)^T, u_2 = (-1,1)^T$</p>
-</li>
-<li><p>$u_1 = (1,2)^T, u_2 = (2,5)^T$</p>
-</li>
-<li><p>$u_1 = (0,1)^T, u_2 = (1,0)^T$</p>
-</li>
-</ol>
-<blockquote><p>问题分析：从标准基$[e_1, e_2]$到特定基$[u_1, u_2]$的基底变换（坐标变换）。根据坐标变换公式，基坐标$x = Uc$，我们可以得到从标准基坐标向特定基坐标的变换公式：$c=U^{-1} x$，其中$U^{-1}$就是标准基$[e_1, e_2]$到特定基$[u_1, u_2]$的转移矩阵。</p>
-</blockquote>
-<p>解：</p>
-<ol>
-<li>$U_1^{-1}=[u_1,u_2]^{-1}=\begin{bmatrix} 1 &amp; -1 \\ 1 &amp; 1 \end{bmatrix}^{-1}$</li>
-<li>$U_2^{-1}=[u_1,u_2]^{-1}=\begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 5 \end{bmatrix}^{-1}$</li>
-<li>$U_3^{-1}=[u_1,u_2]^{-1}=\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}^{-1}$</li>
-</ol>
-<p>下面，我们使用python来求解矩阵的逆矩阵。</p>
+<p><strong>2. 设存在矩阵
+$A = \begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 5 \\ 3 &amp; 6 \end{bmatrix},
+B = \begin{bmatrix} 1 &amp; 4 &amp; 7 \\ 2 &amp; 5 &amp; 8 \end{bmatrix}$, 向量
+$u = \begin{bmatrix} 10 \\ 20 \end{bmatrix}, 
+v = \begin{bmatrix} 100\\ 200 \\300 \end{bmatrix}$。
+请将乘法$Au$和$Bv$分解成列的视角。</strong></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-
-<span class="n">U1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">U2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
-<span class="n">U3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U1_inv=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U1</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U2_inv=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U2</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U3_inv=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U3</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>U1_inv=
-[[ 0.5  0.5]
- [-0.5  0.5]]
-U2_inv=
-[[ 5. -2.]
- [-2.  1.]]
-U3_inv=
-[[-0.  1.]
- [ 1.  0.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.11】</strong> 令$v_1=(3,2)^T, v_2=(4,3)^T$，对应于下列问题中每一组有序基$[u_1, u_2]$，求从$[v_1,v_2]$到$[u_1,u_2]$的转移矩阵。</p>
+<p>解：
+$Au=\begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 5 \\ 3 &amp; 6 \end{bmatrix} 
+\begin{bmatrix} 10 \\ 20 \end{bmatrix}
+=10\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
++20\begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}$</p>
+<p>$Bv=\begin{bmatrix} 1 &amp; 4 &amp; 7 \\ 2 &amp; 5 &amp; 8 \end{bmatrix}
+\begin{bmatrix} 100\\ 200 \\300 \end{bmatrix}
+=100\begin{bmatrix} 1 \\ 2 \end{bmatrix}
++200\begin{bmatrix} 4 \\ 5 \end{bmatrix}
++300\begin{bmatrix} 7 \\ 8 \end{bmatrix}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>3. 令$v_1=(4,3)^T, v_2=(2,5)^T$，对应于下列问题中每一组有序基$[u_1, u_2]$，求从$[v_1,v_2]$到$[u_1,u_2]$的转移矩阵。</strong></p>
 <ol>
-<li><p>$u_1 = (1,1)^T, u_2 = (-1,1)^T$</p>
+<li><p>$u_1 = (1,2)^T, u_2 = (1,-4)^T$</p>
 </li>
-<li><p>$u_1 = (1,2)^T, u_2 = (2,5)^T$</p>
-</li>
-<li><p>$u_1 = (0,1)^T, u_2 = (1,0)^T$</p>
+<li><p>$u_1 = (5,4)^T, u_2 = (2,5)^T$</p>
 </li>
 </ol>
 <blockquote><p>问题分析：从特定基$[u_1, u_2]$到特定基$[v_1, v_2]$的基底变换（坐标变换）。此处，求$[v_1,v_2]$到$[u_1,u_2]$的转移矩阵，可以直接套用公式$S=U^{-1} V$</p>
 </blockquote>
 <ol>
-<li>$S_1=U^{-1} V = \begin{bmatrix} 1 &amp; -1 \\ 1 &amp; 1 \end{bmatrix}^{-1} \begin{bmatrix} 3 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}$</li>
-<li>$S_2=U^{-1} V = \begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 5 \end{bmatrix}^{-1} \begin{bmatrix} 3 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}$</li>
-<li>$S_3=U^{-1} V = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}^{-1} \begin{bmatrix} 3 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}$</li>
+<li>$S_1=U^{-1} V = \begin{bmatrix} 1 &amp; 1 \\ 2 &amp; -4 \end{bmatrix}^{-1} \begin{bmatrix} 4 &amp; 2 \\ 3 &amp; 5 \end{bmatrix}$</li>
+<li>$S_2=U^{-1} V = \begin{bmatrix} 5 &amp; 2 \\ 4 &amp; 5 \end{bmatrix}^{-1} \begin{bmatrix} 4 &amp; 2 \\ 3 &amp; 5 \end{bmatrix}$</li>
 </ol>
 <p>后续的工作，同样交给Python来实现。</p>
 
@@ -13937,26 +13170,23 @@ U3_inv=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
 
-<span class="n">U1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">U2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
-<span class="n">U3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">U1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">U2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
 
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
 
 <span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U1</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
 <span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U2</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
-<span class="n">S3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U3</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S1=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S2=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S3=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S3</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13974,14 +13204,11 @@ U3_inv=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>S1=
-[[ 2.5  3.5]
- [-0.5 -0.5]]
+[[ 3.16666667  2.16666667]
+ [ 0.83333333 -0.16666667]]
 S2=
-[[11. 14.]
- [-4. -5.]]
-S3=
-[[2. 3.]
- [3. 4.]]
+[[ 0.82352941  0.        ]
+ [-0.05882353  1.        ]]
 </pre>
 </div>
 </div>
@@ -13993,13 +13220,12 @@ S3=
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.12】</strong> 令$E=[(5,3)^T, (3,2)^T]$，并令$x=(1,1)^T,y=(1,-1)^T$，且$z=(10,7)^T$。计算$[x]_E, [y]_E$和$[z]_E$。</p>
+<p><strong>4. 令$E=[(2,4)^T, (3,4)^T]$，并令$u=(3,5)^T,v=(6,8)^T$。计算$[u]_E, [v]_E$。</strong></p>
 <blockquote><p>问题分析：从标准基$[e_1, e_2]$到特定基$[u_1, u_2]$的基底变换（坐标变换）。根据坐标变换公式，基坐标$x = Uc$，我们可以得到从标准基坐标向特定基坐标的变换公式：$c=U^{-1} x$，其中, $U^{-1}$就是标准基$[e_1, e_2]$到特定基$[u_1, u_2]$的转移矩阵。</p>
 </blockquote>
 <ol>
-<li>$[x]_E=U^{-1} x = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \begin{bmatrix} 5 &amp; 3 \\ 3 &amp; 2 \end{bmatrix}^{-1}$</li>
-<li>$[y]_E=U^{-1} y = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \begin{bmatrix} 5 &amp; 3 \\ 3 &amp; 2 \end{bmatrix}^{-1}$</li>
-<li>$[z]_E=U^{-1} z = \begin{bmatrix} 10 \\ 7 \end{bmatrix} \begin{bmatrix} 5 &amp; 3 \\ 3 &amp; 2 \end{bmatrix}^{-1}$</li>
+<li>$[u]_E=E^{-1} u = \begin{bmatrix} 3 \\ 5 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \\ 3 &amp; 4 \end{bmatrix}^{-1}$</li>
+<li>$[v]_E=E^{-1} v = \begin{bmatrix} 6 \\ 8 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \\ 3 &amp; 4 \end{bmatrix}^{-1}$</li>
 </ol>
 <p>后续工作交给Python来实现。</p>
 
@@ -14008,21 +13234,19 @@ S3=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
 
-<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">],[</span><span class="mi">7</span><span class="p">]])</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">5</span><span class="p">]])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">],[</span><span class="mi">8</span><span class="p">]])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xE=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">x</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yE=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">y</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zE=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">z</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xE=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">u</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yE=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">v</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -14040,14 +13264,11 @@ S3=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>xE=
-[[-1.]
- [ 2.]]
+[[0.75]
+ [0.5 ]]
 yE=
-[[ 5.]
- [-8.]]
-zE=
-[[-1.]
- [ 5.]]
+[[0.]
+ [2.]]
 </pre>
 </div>
 </div>
@@ -14059,93 +13280,17 @@ zE=
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.13】</strong> 令$u_1=(1,1,1)^T, u_2=(1,2,2)^T, u_3=(2,3,4)^T$，求：</p>
-<p>1) 求基$[e_1, e_2, e_3]$到特定基$[u_1, u_2, u_3]$的转移矩阵。</p>
-<p>2) 求下列向量在基$[u_1, u_2, u_3]$下的坐标。(i) $A=(3,2,5)^T$, (ii) $B=(1,1,2)^T$, (iii) $C=(2,3,2)^T$</p>
-<blockquote><p>问题分析：从标准基$[e_1, e_2, e_3]$到特定基$[u_1, u_2, u_3]$的基底变换（坐标变换）。根据坐标变换公式$c=U^{-1} x$即可求得坐标和转移矩阵。</p>
-</blockquote>
-<p>$U^{-1}=\begin{bmatrix} 1 &amp; 1 &amp; 2\\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} ^{-1}$</p>
-<p>$[A]_u = U^{-1} x = \begin{bmatrix} 1 &amp; 1 &amp; 2\\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} ^{-1} \begin{bmatrix} 3 \\ 2 \\ 5 \end{bmatrix}$</p>
-<p>$[B]_u = U^{-1} x = \begin{bmatrix} 1 &amp; 1 &amp; 2\\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} ^{-1} \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}$</p>
-<p>$[C]_u = U^{-1} x = \begin{bmatrix} 1 &amp; 1 &amp; 2\\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} ^{-1} \begin{bmatrix} 2 \\ 3 \\ 2 \end{bmatrix}$</p>
-<p>后续工作交给Python来实现。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
-
-<span class="n">U_inv</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U_inv=</span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">U_inv</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Au=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U_inv</span><span class="p">,</span> <span class="n">A</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bu=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U_inv</span><span class="p">,</span> <span class="n">B</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cu=</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U_inv</span><span class="p">,</span> <span class="n">C</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>U_inv=
- [[ 2.  0. -1.]
- [-1.  2. -1.]
- [ 0. -1.  1.]]
-Au=
-[[ 1.]
- [-4.]
- [ 3.]]
-Bu=
-[[ 0.]
- [-1.]
- [ 1.]]
-Cu=
-[[ 2.]
- [ 2.]
- [-1.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.14】</strong> 令$v_1=(4,6,7)^T, v_2=(0,1,1)^T, v_3=(0,1,2)^T$，并令$u_1=(1,1,1)^T, u_2=(1,2,2)^T, u_3=(2,3,4)^T$，求：</p>
-<p>1) 求从特定基$[v_1, v_2, v_3]$到特定基$[u_1, u_2, u_3]$的转移矩阵。</p>
-<p>2) 若$x=2v_1 + 3v_2-4v_3$，确定向量$x$相应于$u_1,u_2,u_3$的坐标。</p>
+<p><strong>5. 令$v_1=(1,2,3)^T, v_2=(2,3,4)^T, v_3=(3,4,5)^T$，并令$u_1=(9,7,6)^T, u_2=(8,6,3)^T, u_3=(2,4,6)^T$，求：</strong></p>
+<p><strong>1) 求从特定基$[v_1, v_2, v_3]$到特定基$[u_1, u_2, u_3]$的转移矩阵。</strong></p>
+<p><strong>2) 若$x=-3v_1 - 5v_2 + 7v_3$，确定向量$x$相应于$u_1,u_2,u_3$的坐标。</strong></p>
 <blockquote><p>问题分析：从特定基$[u_1, u_2, u_3]$到特定基$[v_1, v_2, v_3]$的基底变换（坐标变换）。根据坐标变换的通用公式$Vc = Ud$，即可求得坐标和转移矩阵。</p>
 </blockquote>
 <p>解：</p>
 <p>1) 要获得$v$到$u$的转移矩阵，实际上就是将$v$到$e$和$e$到$u$的转移矩阵进行合成，那么可以得到：</p>
-<p>$S = U^{-1} V = \begin{bmatrix} 1 &amp; 1 &amp; 2 \\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 4 \end{bmatrix} ^{-1} \begin{bmatrix} 4 &amp; 0 &amp; 0 \\ 6 &amp; 1 &amp; 1 \\ 7 &amp; 1 &amp; 2 \end{bmatrix} $</p>
+<p>$S = U^{-1} V = \begin{bmatrix} 9 &amp; 8 &amp; 2 \\ 7 &amp; 6 &amp; 4 \\ 6 &amp; 3 &amp; 6 \end{bmatrix} ^{-1} \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 4 \\ 3 &amp; 4 &amp; 5 \end{bmatrix} $</p>
 <p>2) 基于$v$的坐标$x$转换为基于$u$的坐标，可以通过通用公式的变形获得，即：</p>
 <p>$Vc = Ud =&gt; d = U^{-1} V c
-=&gt; x_{new} = U^{-1} V x = S \begin{bmatrix} 2 \\ 3 \\ -4 \end{bmatrix}$</p>
+=&gt; x_{new} = U^{-1} V x = S \begin{bmatrix} -3 \\ -5 \\ 7 \end{bmatrix}$</p>
 <p>接下来的工作，仍然交给Python来实现。</p>
 
 </div>
@@ -14153,15 +13298,15 @@ Cu=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
 
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">xv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="n">xv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">7</span><span class="p">]])</span>
 
 <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">U</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
 <span class="n">xu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">xv</span><span class="p">)</span>
@@ -14185,13 +13330,13 @@ Cu=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>S=
- [[ 1. -1. -2.]
- [ 1.  1.  0.]
- [ 1.  0.  1.]]
+ [[0.         0.04761905 0.0952381 ]
+ [0.         0.04761905 0.0952381 ]
+ [0.5        0.5952381  0.69047619]]
 xu=
-[[ 7.]
- [ 5.]
- [-2.]]
+[[0.42857143]
+ [0.42857143]
+ [0.35714286]]
 </pre>
 </div>
 </div>
@@ -14203,65 +13348,11 @@ xu=
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.15】</strong> 给定$v_1=\begin{bmatrix} 1 \\ 2 \end{bmatrix}, v_2=\begin{bmatrix} 2 \\ 3 \end{bmatrix}, S = \begin{bmatrix} 3 &amp; 5 \\ 1 &amp; -2 \end{bmatrix}$，求：$w_1, w_2$，使得$S$为从$[w_1, w_2]$到$[v_1, v_2]$的转移矩阵。</p>
-<blockquote><p>问题分析：从特定基$[w_1, w_2]$到特定基$[v_1, v_2]$的基底变换（坐标变换）。由于S是w到v的转移矩阵，所以有$S=V^{-1} W$，由此可以得到$w=VS$</p>
-</blockquote>
-<p>解：要求v到w的坐标，即利用公式 $w=Sv(d=Sc)$求解，其中$S$为$v$到$w$的转移矩阵。</p>
-<p>$W=VS= \begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 3 \end{bmatrix} \begin{bmatrix} 3 &amp; 5 \\ 1 &amp; -2 \end{bmatrix}$</p>
-<p>下面同样采用Python进行实现。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-
-<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;W=</span><span class="se">\n</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">W</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>W=
- [[5 1]
- [9 4]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>【习题5.16】</strong> 给定$v_1=\begin{bmatrix} 2 \\ 6 \end{bmatrix}, v_2=\begin{bmatrix} 1 \\ 4 \end{bmatrix}, S = \begin{bmatrix} 4 &amp; 1 \\ 2 &amp; 1 \end{bmatrix}$，求：$u_1, u_2$，使得$S$为从$[v_1, v_2]$到$[u_1, u_2]$的转移矩阵。</p>
+<p><strong>6. 给定$v_1=\begin{bmatrix} 3 \\ 5 \end{bmatrix}, v_2=\begin{bmatrix} -3 \\ -4 \end{bmatrix}, S = \begin{bmatrix} 2 &amp; -2 \\ 3 &amp; 5 \end{bmatrix}$，求：$u_1, u_2$，使得$S$为从$[v_1, v_2]$到$[u_1, u_2]$的转移矩阵。</strong></p>
 <blockquote><p>问题分析：从特定基$[u_1, u_2]$到特定基$[v_1, v_2]$的基底变换（坐标变换）。由于S是v到u的转移矩阵，所以有$S=U^{-1} V$，由此可以得到$V=US =&gt; U=VS^{-1}$</p>
 </blockquote>
 <p>解：</p>
-<p>$U = VS^{-1} = \begin{bmatrix} 2 &amp; 1 \\ 6 &amp; 4 \end{bmatrix} \begin{bmatrix} 4 &amp; 1 \\ 2 &amp; 1 \end{bmatrix} ^{-1}$</p>
+<p>$U = VS^{-1} = \begin{bmatrix} 3 &amp; -3 \\ 5 &amp; -4 \end{bmatrix} \begin{bmatrix} 2 &amp; -2 \\ 3 &amp; 5 \end{bmatrix} ^{-1}$</p>
 <p>后续计算同样使用Python实现。</p>
 
 </div>
@@ -14269,14 +13360,14 @@ xu=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
 
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
 
 <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
 
@@ -14298,8 +13389,8 @@ xu=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>W=
- [[ 0.  1.]
- [-1.  5.]]
+ [[1.5    0.    ]
+ [2.3125 0.125 ]]
 </pre>
 </div>
 </div>
