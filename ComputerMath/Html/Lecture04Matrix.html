@@ -13244,7 +13244,7 @@ A1与A3的形态相同：True，A1与A3相等：False。
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13401,7 +13401,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13409,7 +13409,7 @@ $</p>
 <span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">A3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A1 = A2 is </span><span class="si">{}</span><span class="s2">。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A1</span><span class="o">==</span><span class="n">A2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A1 = A3 is </span><span class="si">{}</span><span class="s2">。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">A1</span><span class="o">==</span><span class="n">A3</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A1 = A3 is </span><span class="si">{}</span><span class="s2">。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">A1</span><span class="o">==</span><span class="n">A3</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -13997,16 +13997,16 @@ $(i = 1, 2, ..., m; j = 1, 2, ..., n)，$并把此乘积记作 $C=AB$。</p>
 </ol>
 <p>下面给出一个例子：</p>
 <p><strong>【例3】</strong> 求矩阵 $A = \begin{bmatrix} 
-    1 &amp; 2 &amp; 3 \\
-    4 &amp; 5 &amp; 6 \\
-    1 &amp; 1 &amp; 1
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+1 &amp; 1 &amp; 1
 \end{bmatrix}，
-B = \begin{bmatrix} 
-    1 &amp; 7 \\
-    2 &amp; 8 \\
-    3 &amp; 9 
+B=\begin{bmatrix} 
+1 &amp; 7 \\
+2 &amp; 8 \\
+3 &amp; 9 
 \end{bmatrix}$ 的乘积AB。</p>
-<p>解：因为A是3×2矩阵，B是2×3矩阵，A的列数等于B的行数，所以矩阵A与B可以相乘，其乘积AB=C是一个2×2矩阵。按定理可得：
+<p>解：因为A是3×3矩阵，B是3×2矩阵，A的列数等于B的行数，所以矩阵A与B可以相乘，其乘积AB=C是一个3×2矩阵。按定理可得：
 $C=AB=\begin{bmatrix} 
     1 &amp; 2 &amp; 3 \\
     4 &amp; 5 &amp; 6 \\
