@@ -34,8 +34,21 @@
             color: #5D5D5D;
         }
         
+        h1 {
+            text-align: center;
+            font: bold 200% 'century gothic', arial, sans-serif;
+            margin: 20px 0;
+            padding: 15px 0 5px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            line-height: 2em;
+            margin-top: 30px;
+        }
+        
         h3 {
-            font: normal 165% 'century gothic', arial, sans-serif;
+            font: normal 125% 'century gothic', arial, sans-serif;
             color: #43423F;
             margin: 0 0 15px 0;
             padding: 15px 0 5px 0;
@@ -117,14 +130,19 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+    <h1>机器学习（Machine Learning）</h1>
     <div id="Notice">
         <div id="NoticeContent">
-            <h3>课程安排和教学大纲</h3>
-            <p>本课程...</p>
+            <h3>课程简介</h3>
+            <p style="text-indent: 2em;">机器学习(Machine Learning, ML)是一门多领域交叉科学，也是人工智能技术的核心。专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能；特别是如何从数据或者以往的经验中学习，使之不断改善自身的性能。近年来，机器学习技术在自然语言处理、语音识别、图像识别、手写字符识别、金融数据分析等等领域得到了十分广泛和成功的应用。 1. 通过本门课程的学习，使学生了解机器学习的基本概念、应用背景；掌握各类机器学习算法的基本原理； 培养学生学会分析研究计算机处理的数据对象的特性，以便选择适当的机器学习算法和模型解决实际问题。
+                2. 本课程的学习过程也是进行数据分析和复杂程序设计的训练过程。通过对具体机器学习算法和应用案例的研究，进一步锻炼学生的动手能力，培养学生解决实际问题的能力。</p>
+            <p style="text-indent: 2em;">值得注意的是，由于近年来深度学习的飞速发展，传统机器学习的算法已经逐渐落幕。但本课程所涉及的处理问题的基本方法和思路依然可以被用到后续的基于深度学习的课程中。与此同时，本课程所涉及的传统机器学习算法也是人工智能技术的基本算法，非常值得学习和理解。</p>
+            <h3>教学内容</h3>
+            <p style="text-indent: 2em;">课堂讲授(含实验）约96学时（6学分），同时包含28个学时（0.5学分）的实训学时（1周）。主要包括：机器学习的基本概念和机器学习系统的基本要素，概念学习，决策树学习，贝叶斯学习，基于实例的学习，感知机和支持向量机，集成学习，以及神经网络和深度学习基础；各种机器学习算法应用案例分析。</p>
             <br />
             <p style="text-indent: 2em;">本课程的考勤、作业提交、课堂练习、期末测验将使用<a href="https://www.ketangpai.com/" target="_blank">课堂派</a>平台，请各位同学使用实名（学号）加入课程。在使用方面有疑问的同学可以参考<a href="Attachments/KTP_handbook_students.pdf" target="_blank">使用手册—学生版</a>。加入课程请扫描二维码，或注册后使用加课码加入：<a href="Attachments/KTP_CourseID_2020Spring.png"
                     target="_blank">课程二维码及课程码</a>。</p>
+            <p style="text-indent: 2em;"></p>
             <br />
         </div>
     </div>
@@ -135,17 +153,19 @@
             <a href="Documents/71094322_机器学习_教学大纲.pdf" target="_blank">教学大纲</a>
             <a href="Documents/71094322_机器学习_考核说明.pdf" target="_blank">考核说明</a>
             <a href="Documents/71094322_机器学习_教学进度计划（理实一体）（96课时）.pdf" target="_blank">教学进度计划(2020年春)</a>
+            <a href="Documents/课程实训报告首页模板.docx" target="_blank">课程实训报告首页模板</a>
         </div>
         <div class="DocumentsContent">
             Github：
             <a href="https://github.com/ouxinyu/Teaching/tree/master/MachineLearning" target="_blank">MachineLearning</a>
         </div>
         <div class="DocumentsContent">
-            数据集：<a href="Datasets/Datasets.rar" target="_blank">本课程用到的所有第三方数据集</a>
+            数据集：<a href="http://ouxinyu.cn/DataSets/index.html" target="_blank">本课程用到的所有第三方数据集</a>
         </div>
     </div>
 
     <div id="Syllabus">
+        <h2>课程进度计划表</h2>
         <table>
             <tr class="SyllabusTitle">
                 <th>Event Type</th>
@@ -548,11 +568,11 @@
                     <ul>
                         <li>
                             <!-- <a href="javascript:window.open(root+ 'knowledgement/ActivationFunction.ipynb','_blank')">激活函数</a> -->
-                            <a href="knowledgement/ActivationFunction.html" target="_blank">[Notebook]</a>
+                            <a href="knowledgement/ActivationFunction.html" target="_blank">[ActivationFunction]</a>
                         </li>
                         <li>
                             <!-- <a href="javascript:window.open(root+ 'knowledgement/OverfittingUnderfitting.ipynb','_blank')">过拟合与欠拟合</a> -->
-                            <a href="knowledgement/OverfittingUnderfitting.html" target="_blank">[Notebook]</a>
+                            <a href="knowledgement/OverfittingUnderfitting.html" target="_blank">[OverfittingUnderfitting]</a>
                         </li>
                     </ul>
                 </td>
@@ -823,8 +843,99 @@
                 <td></td>
             </tr>
         </table>
+
+
+        <h2>实训进度计划表</h2>
+        <table>
+            <tr class="SyllabusTitle">
+                <th>Event Type</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Course Materials</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>项目一：鸢尾花识别</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Day01</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li style="font-weight: bold;">【实训目的】</li>
+                        <li>1. 学会在Baidu AI Studio(http://aistudio.baidu.com/)上创建项目，并加入课程</li>
+                        <li>2. 学会Jupyter Notebook的基本使用方法，包括基本的Markdown Cell和Code Cell的创建和编辑</li>
+                        <li>3. 学会使用函数编程法完成代码的编写</li>
+                        <li>4. 学会使用机器学习算法完成鸢尾花识别任务</li>
+                        <li style="font-weight: bold;">【实训任务】</li>
+                        <li>1. 构建一个模型，根据鸢尾花的花萼长度、花萼宽度、花瓣长度和花瓣宽度，使用训练集对鸢尾花进行建模</li>
+                        <li>2. 对模型进行评分，输出测试集的精度</li>
+                        <li>3. 使用模型将一朵鸢尾花分为三种不同的品种</li>
+                        <li>4. 完善给出的代码</li>
+                        <li>5. 将完整的代码和运行结果在AIStudio平台进行提交</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="Html/Exp01IrisAssignment.html" target="_blank">[Assignment]</a>
+                        </li>
+                        <li>
+                            <a href="Html/Exp01Iris.html" target="_blank">[Notebook]</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>项目二：手写数字识别</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Day02 ~ Day05</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li style="font-weight: bold;">【实训目的】</li>
+                        <li>1. 进一步Baidu AI Studio平台</li>
+                        <li>2. 熟练使用Jupyter Notebook的基本使用方法，包括基本的Markdown Cell和Code Cell的创建和编辑</li>
+                        <li>3. 熟练使用函数化编程方法，并学会如何对函数进行基本的调试</li>
+                        <li>4. 学会使用机器学习算法完成手写字体的识别</li>
+                        <li>5. 学会从指定文件夹中读取图片，并将处理好的图片保存到指定文件夹中</li>
+                        <li>6. 学会将训练好的模型保存到指定文件夹</li>
+                        <li>7. 学会载入保存在指定文件夹中的模型，并能够利用载入的模型对样本进行预测</li>
+                        <li style="font-weight: bold;">【实训任务】</li>
+                        <li>1. 构建一个模型（使用20%的样本），根据0~9的数字的像素特征进行建模</li>
+                        <li>2. 对模型进行评分，输出测试集（10000副测试图片）的精度（任务一）</li>
+                        <li>3. 使用模型对保存到文件夹中图片进行预测（任务二）</li>
+                        <li>4. 完善所有代码，同时进一步完善Notebook，将其输出为《实训报告正文》</li>
+                        <li>5. 将完整的代码和运行结果在AIStudio平台进行提交</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="Html/Exp02MNISTAssignment.html" target="_blank">[Assignment]</a>
+                        </li>
+                        <li>
+                            <a href="Html/Exp02MNIST.html" target="_blank">[Notebook]</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
     </div>
 
+    <br />
+    <br />
     <br />
 </body>
 
