@@ -21,10 +21,10 @@ D. 张量
 <br/>
 
 **2. 以下记法中，可以用来表示向量的有哪些？**  
-A. <font style='color:blue;font-weight:bold;'>***a***</font>     
+A. <font style='color:blue;font-weight:bold;'>a</font>     
 B. <font style='color:blue;font-weight:bold;'>$\vec{v}$</font>  
 C. <font style='color:blue;font-weight:bold;'>$\vec{AB}$</font>   
-D. <font style='color:blue;font-weight:bold;'>***A***</font>     
+D. <font style='color:blue;font-weight:bold;'>A</font>     
 
 **答案及解析：** ABCD  
 A，向量的标准表达方式，小写粗斜体英文字母；B，单向量有向线段表达法；C，起点-终点有向线段表达法；D，张量表达法。
@@ -44,7 +44,7 @@ D. 矩阵在$x$方向上的分量
 
 **4. 给出下列Python代码的运行结果（）：**  
 
->
+
 ```python
 import numpy as np
 A = np.array([2, 2, 3, 4])
@@ -52,8 +52,6 @@ C = A.T
 
 print('a={}'.format(C))
 ```
->
-
            
 A. *a* = [[2 2 3 4]]  (二阶行向量)  
 <font style='color:blue;font-weight:bold;font-style:italic'>B. a = [2 2 3 4]  (一阶行向量)</font>  
@@ -120,7 +118,7 @@ D. 无穷范数
 
 **答案及解析：** C
 
-</br>
+<br/>
 
 **2. 范数是数学中的一种基本概念，通常可以理解成一类特殊的函数。一个向量的范数通常满足以下哪些条件？（      ）。**  
 <font style='color:blue;font-weight:bold;'>A. 非负性</font>  
@@ -130,7 +128,7 @@ C. 不变性
 
 **答案及解析：** ABD
 
-</br>
+<br/>
 
 **3. 给定向量$a=[1,3,5,7,9]$，试求向量$a$的L1范数。**  
 <font style='color:blue;font-weight:bold;'>A. 25</font>  
@@ -142,7 +140,7 @@ D. 9.0
 
 `L1范数`求的是向量每个元素的绝对值的累加和，即：$||v_1||=\sum^n_{i=1} |v_i|$。
 
-</br>
+<br/>
 
 **4. 给定向量$a=[1,3,5,7,9]$，试求向量$a$的L2范数。**  
 A. 25.0</font>  
@@ -154,7 +152,7 @@ D. 9.0
 
 `L2范数`求的是向量的长度，也被称为欧几里得距离，简称欧氏距离。即：$||v_2||=(\sum^n_{i=1} |v_i|^2)^{1/2}$。
 
-</br>
+<br/>
 
 **5. 给定向量$a=[1,3,5,7,9]$，试求向量$a$的无穷范数。**  
 A. 25.0  
@@ -166,7 +164,7 @@ C. 1.0
 
 $L_{\infty}$ `范数` 表示向量中最大分量的绝对值，即：$||v_{\infty}||=\max \limits_{i} |v_i|$。
 
-</br>
+<br/>
 
 习题3~5的Python描述
 
