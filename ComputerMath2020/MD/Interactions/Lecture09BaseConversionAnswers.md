@@ -51,7 +51,7 @@ B. (6,8) (20,22)
 <font style='color:blue;font-weight:bold;'>C. (20,22) (6,8)</font>  
 D. (20,22) (20,22)
 
-**答案及解析：** A
+**答案及解析：C** 
 
 因为向量$u$存在于空间$A$中，因此相对于空间$A$，$u$的坐标为(6,8). 而相对于标准基的空间，其坐标为$Au=\begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} 6 \\ 8 \end{bmatrix} = \begin{bmatrix} 20 \\ 22 \end{bmatrix}$。
 
@@ -164,8 +164,3 @@ B. B = scipy.inv(A)
 D. B = np.dot(A)
 
 **答案及解析：** C
-
-
-```python
-
-```

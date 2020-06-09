@@ -15,10 +15,10 @@ C. 矩阵
 D. 张量  
 
 **2. 以下记法中，可以用来表示向量的有哪些？**  
-A. <font style='color:blue;font-weight:bold;'>***a***</font>     
+A. <font style='color:blue;font-weight:bold;'>a</font>     
 B. <font style='color:blue;font-weight:bold;'>$\vec{v}$</font>  
 C. <font style='color:blue;font-weight:bold;'>$\vec{AB}$</font>   
-D. <font style='color:blue;font-weight:bold;'>***A***</font>     
+D. <font style='color:blue;font-weight:bold;'>A</font>     
 
 **3. 给定向量$a=[3,5,7]^T$ ，它可以用来表示（）。**  
 A. 一个行向量  
@@ -28,7 +28,6 @@ D. 矩阵在$x$方向上的分量
 
 **4. 给出下列Python代码的运行结果（）：**  
 
->
 ```python
 import numpy as np
 A = np.array([2, 2, 3, 4])
@@ -36,7 +35,6 @@ C = A.T
 
 print('a={}'.format(C))
 ```
->
           
 A. *a* = [[2 2 3 4]]  
 <font style='color:blue;font-weight:bold;font-style:italic'>B. a = [2 2 3 4]</font>  
